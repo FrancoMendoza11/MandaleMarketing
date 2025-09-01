@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandale Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Arimo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D62C65',
+                        secondary: '#1D6356',
+                        dark: '#2D3748',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        arimo: ['Arimo', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'TAM Rosebud';
+            src: url('https://fonts.cdnfonts.com/s/85400/TAMRosebud.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .rosebud-font {
+            font-family: 'TAM Rosebud', cursive;
+        }
+        
+        .service-card, .portfolio-card, .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover, .portfolio-card:hover, .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .hero-pattern {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,245,248,1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #D62C65 0%, #1D6356 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .testimonial-slide {
+            display: none;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        
+        /* Efecto de aparición */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Efecto de escalado */
+        .scale-in {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+        .scale-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        /* Efecto de parallax */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Animación de iconos flotantes */
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Hero section mejorado */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #D62C65 0%, #1D6356 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+
+        /* Efecto de brillo en botones */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shine-effect:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        
+        .shine-effect:hover:after {
+            opacity: 1;
+            animation: shine 1.5s forwards;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(30deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(30deg);
+            }
+        }
+        
+        /* Animaciones para el gráfico del hero */
+        .rotating-circle {
+            animation: rotate 30s linear infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .keyword-float {
+            animation: keyword-float 6s ease-in-out infinite;
+        }
+        
+        @keyframes keyword-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+         
+        
+        .connector-line {
+            opacity: 0.6;
+        }
+        
+        /* Ajustar el tamaño de fuente para que las palabras quepan mejor */
+        .keyword-text {
+            font-size: 9px;
+            font-weight: 700;
+            text-anchor: middle;
+            dominant-baseline: central;
+        }
+    </style>
+</head>
+<body class="font-arimo bg-white text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold text-primary">MANDALE<span class="text-secondary">MARKETING</span></h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#inicio" class="hover:text-primary transition">Inicio</a></li>
+                    <li><a href="#servicios" class="hover:text-primary transition">Servicios</a></li>
+                    <li><a href="#portfolio" class="hover:text-primary transition">Portfolio</a></li>
+                    <li><a href="#sobre-nosotras" class="hover:text-primary transition">Sobre Nosotras</a></li>
+                    <li><a href="#contacto" class="hover:text-primary transition">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-primary" id="mobileMenuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white py-4 px-4 shadow-md" id="mobileMenu">
+            <ul class="space-y-3">
+                <li><a href="#inicio" class="block hover:text-primary transition">Inicio</a></li>
+                <li><a href="#servicios" class="block hover:text-primary transition">Servicios</a></li>
+                <li><a href="#portfolio" class="block hover:text-primary transition">Portfolio</a></li>
+                <li><a href="#sobre-nosotras" class="block hover:text-primary transition">Sobre Nosotras</a></li>
+                <li><a href="#contacto" class="block hover:text-primary transition">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section rediseñado -->
+    <section id="inicio" class="bg-[#fef7f0] py-16 md:py-24 relative overflow-hidden">
+    
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 hero-content fade-in">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
+                    <span class="block">Potenciamos tu</span>
+                    <span class="gradient-text">presencia digital</span>
+                </h2>
+                
+                <p class="text-xl text-gray-700 mb-8">
+                    Creamos, publicamos y potenciamos tu contenido en redes para que tu marca sea vista, recordada y elegida.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <a href="#contacto" class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold py-4 px-8 rounded-full inline-block transition transform hover:scale-105 shadow-lg hover:shadow-xl text-center">
+                        Comenzar ahora
+                    </a>
+                    <a href="#servicios" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-poppins font-semibold py-4 px-8 rounded-full inline-block transition transform hover:scale-105 text-center">
+                        Nuestros servicios
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-3 floating-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="text-gray-700">Resultados garantizados</span>
+                    </div>
+                </div>
+            </div>
+            
+      <div class="md:w-1/2 mt-12 md:mt-0 scale-in">
+    <div class="hero-graphic relative flex flex-col items-center justify-center">
+        <!-- Contenedor principal del gráfico -->
+        <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 bg-[#fef7f0]">
+            <!-- Círculo de fondo con gradiente -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-90 bg-[#fef7f0]"></div>
+            
+            <!-- Icono central -->
+            <div class="absolute inset-0 flex items-center justify-center ">
+                <div class="w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center shadow-xl border-8 border-white overflow-hidden bg-[#fef7f0]">
+                    <!-- Contenedor cuadrado forzado para la imagen -->
+                    <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden bg-[#fef7f0]">
+                        <img src="/home/franco-mendoza/MandaleMarketing/MN.ico" alt="Mandale Marketing" 
+                             class="w-full h-full object-cover" 
+                             onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                    </div>
+                    <!-- Elemento de respaldo circular grande -->
+                    <div class="hidden absolute inset-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
+                        <span class="text-5xl md:text-6xl font-bold text-white">MN</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Iconos de redes sociales alrededor -->
+            <div class="absolute inset-0 rotating-icons">
+                <!-- Instagram -->
+                <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-instagram text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="absolute top-6 -right-2 transform translate-x-1/2">
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="absolute bottom-6 -right-2 transform translate-x-1/2">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-tiktok text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- YouTube -->
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-youtube text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-linkedin-in text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Twitter -->
+                <div class="absolute top-6 -left-2 transform -translate-x-1/2">
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                        <i class="fab fa-twitter text-white text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        
+        <!-- Texto descriptivo debajo -->
+        <div class="text-center">
+            <h3 class="text-xl font-semibold text-primary mb-3 margintop">Presencia en Redes Sociales</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .margintop{
+	margin-top:3vh;
+    }
+    
+    /* Animación de rotación para los iconos */
+    .rotating-icons {
+        animation: rotate 30s linear infinite;
+    }
+    
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    /* Asegurar que los iconos giren en dirección contraria para mantenerse legibles */
+    .rotating-icons > div {
+        animation: rotate-reverse 30s linear infinite;
+    }
+    
+    @keyframes rotate-reverse {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+    }
+    
+    /* Efecto de flotación para los iconos individuales */
+    .rotating-icons > div > div {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .rotating-icons > div:nth-child(2) > div { animation-delay: 0.5s; }
+    .rotating-icons > div:nth-child(3) > div { animation-delay: 1s; }
+    .rotating-icons > div:nth-child(4) > div { animation-delay: 1.5s; }
+    .rotating-icons > div:nth-child(5) > div { animation-delay: 2s; }
+    .rotating-icons > div:nth-child(6) > div { animation-delay: 2.5s; }
+</style>
+        
+        <!-- Flecha indicadora -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#servicios" class="text-primary text-4xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="stat-number" data-count="150">0</div>
+                    <p class="text-gray-600">Proyectos Completados</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number" data-count="50">0</div>
+                    <p class="text-gray-600">Clientes Satisfechos</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number" data-count="3">0</div>
+                    <p class="text-gray-600">Años de Experiencia</p>
+                </div>
+                <div class="fade-in">
+                    <div class="stat-number" data-count="12">0</div>
+                    <p class="text-gray-600">Premios Obtenidos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Nuestros Servicios</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Ofrecemos soluciones integrales de marketing digital para potenciar tu marca en redes sociales</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
+                        <i class="fas fa-hashtag text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">GESTIÓN DE REDES</h3>
+                    <p class="text-gray-600 mb-4">Administramos y optimizamos tus redes sociales para maximizar tu presencia digital y engagement con tu audiencia.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Community Manager</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Estrategia de contenidos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Calendarización</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Interacción con seguidores</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
+                        <i class="fas fa-pencil-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">CREACIÓN DE CONTENIDO</h3>
+                    <p class="text-gray-600 mb-4">Diseñamos contenido visualmente atractivo y relevante que comunica efectivamente tu mensaje de marca.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Redactora Creativa</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Productora Audiovisual</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Fotografía profesional</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Diseño gráfico</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ESTRATEGIAS DE MARCA</h3>
+                    <p class="text-gray-600 mb-4">Desarrollamos estrategias personalizadas que aumentan tu visibilidad, reconocimiento y conversiones.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Social Media Manager</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Análisis de datos</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Dirección creativa</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Planificación estratégica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Nuestro Portfolio</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Algunos de nuestros proyectos más destacados en redes sociales y marketing digital</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <span class="text-white text-lg font-poppins">Campaña Redes Sociales</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Branding para Restaurante</h3>
+                        <p class="text-gray-600 mb-4">Estrategia completa de redes sociales para un restaurante local, aumentando seguidores en un 200%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Instagram</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Facebook</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Content Marketing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-primary flex items-center justify-center">
+                        <span class="text-white text-lg font-poppins">Content Creation</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Campaña de Verano</h3>
+                        <p class="text-gray-600 mb-4">Creación de contenido audiovisual para una marca de ropa, generando un aumento del 150% en engagement.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">TikTok</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Reels</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Video Production</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <span class="text-white text-lg font-poppins">Estrategia Digital</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Lanzamiento de Producto</h3>
+                        <p class="text-gray-600 mb-4">Estrategia completa para el lanzamiento de a new product, alcanzando 500k de impresiones en una semana.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Estrategia</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Análisis</span>
+                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Lanzamiento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-flex items-center text-primary font-semibold group">
+                    Ver más proyectos
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--Sobre Nosotras -->
+    <section id="sobre-nosotras" class="py-16 bg-[#fef7f0]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Sobre Nosotras</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Dos apasionadas del marketing digital con la misión de hacer crecer tu marca</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Naza -->
+                <div class="team-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
+                            N
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-poppins font-semibold text-secondary">Naza</h3>
+                            <p class="text-gray-600">Especialista en Estrategia Digital</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Con más de 5 años de experiencia en marketing digital, me especializo en desarrollar estrategias que conectan marcas con su audiencia objetivo.</p>
+                    <div class="flex space-x-4">
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Estrategia</span>
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Análisis</span>
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Branding</span>
+                    </div>
+                </div>
+                
+                <!-- Nahi -->
+                <div class="team-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
+                            N
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-poppins font-semibold text-secondary">Nahi</h3>
+                            <p class="text-gray-600">Creadora de Contenido & Community Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Mi pasión es crear contenido que inspire y conecte. Me especializo en gestión de comunidades y producción de contenido visual para redes sociales.</p>
+                    <div class="flex space-x-4">
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Contenido</span>
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Community</span>
+                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Fotografía</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-primary to-secondary rounded-lg p-8 text-white fade-in">
+                <h3 class="text-2xl font-poppins font-bold mb-6">¿Por qué trabajar con nosotras?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-sync-alt text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">Enfoque integral</h4>
+                        <p class="text-sm mt-2">Abarcamos todos los aspectos del marketing digital</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">Resultados medibles</h4>
+                        <p class="text-sm mt-2">Nos enfocamos en métricas y ROI tangible</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lightbulb text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">Creatividad sin límites</h4>
+                        <p class="text-sm mt-2">Ideas innovadoras para destacar tu marca</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">Comunicación constante</h4>
+                        <p class="text-sm mt-2">Siempre estamos en contacto para mantenerte informado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">¿Listo para potenciar tu marca?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto fade-in">Contáctanos y hablemos sobre cómo podemos ayudarte a alcanzar tus objetivos</p>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <form id="contactForm" class="bg-gray-50 rounded-lg shadow-md p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold py-3 px-8 rounded-full transition w-full">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2 fade-in">
+                    <div class="bg-gradient-to-br from-primary to-secondary rounded-lg p-8 h-full text-white">
+                        <h3 class="text-2xl font-poppins font-bold mb-6">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Ubicación</h4>
+                                    <p>Buenos Aires, Argentina</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p>info@mandalemarketing.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Teléfono</h4>
+                                    <p>+54 11 2345-6789</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Horario</h4>
+                                    <p>Luenes a Viernes: 9am - 6pm</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Síguenos en redes</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">MANDALE<span class="text-primary">MARKETING</span></h2>
+                    <p class="mt-2">Potenciamos tu marca en redes sociales</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-sm text-center">
+                <p>© 2025 Mandale Marketing. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de aparición al hacer scroll
+        function checkScroll() {
+            const elements = document.querySelectorAll('.fade-in, .scale-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Here you would typically send the form data to a server
+                alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+                document.getElementById('contactForm').reset();
+            }
+        });
+
+        // Animated counter for stats
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        function animateCounter() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = count + increment;
+                    setTimeout(() => animateCounter(), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Start counter animation when stats section is in viewport
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.bg-gray-50'));
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Inicializar eventos
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+
+            // Animaciones para elementos del hero
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 300);
+            
+            setTimeout(() => {
+                document.querySelector('.hero-graphic').classList.add('visible');
+            }, 800);
+        });
+    </script>
+</body>
+</html>
