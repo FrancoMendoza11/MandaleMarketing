@@ -187,6 +187,41 @@
             text-anchor: middle;
             dominant-baseline: central;
         }
+
+        /* Animación de rotación para los iconos */
+        .rotating-icons {
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Asegurar que los iconos giren en dirección contraria para mantenerse legibles */
+        .rotating-icons > div {
+            animation: rotate-reverse 30s linear infinite;
+        }
+        
+        @keyframes rotate-reverse {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+        
+        /* Efecto de flotación para los iconos individuales */
+        .rotating-icons > div > div {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .rotating-icons > div:nth-child(2) > div { animation-delay: 0.5s; }
+        .rotating-icons > div:nth-child(3) > div { animation-delay: 1s; }
+        .rotating-icons > div:nth-child(4) > div { animation-delay: 1.5s; }
+        .rotating-icons > div:nth-child(5) > div { animation-delay: 2s; }
+        .rotating-icons > div:nth-child(6) > div { animation-delay: 2.5s; }
+        
+        .margintop {
+            margin-top: 3vh;
+        }
     </style>
 </head>
 <body class="font-arimo bg-white text-gray-800">
@@ -199,9 +234,11 @@
             <nav class="hidden md:block">
                 <ul class="flex space-x-8">
                     <li><a href="#inicio" class="hover:text-primary transition">Inicio</a></li>
+                    <li><a href="#quienes-somos" class="hover:text-primary transition">¿Quiénes Somos?</a></li>
                     <li><a href="#servicios" class="hover:text-primary transition">Servicios</a></li>
-                    <li><a href="#portfolio" class="hover:text-primary transition">Portfolio</a></li>
-                    <li><a href="#sobre-nosotras" class="hover:text-primary transition">Sobre Nosotras</a></li>
+                    <li><a href="#equipo" class="hover:text-primary transition">Equipo</a></li>
+                    <li><a href="#experiencia" class="hover:text-primary transition">Experiencia</a></li>
+                    <li><a href="#planes" class="hover:text-primary transition">Planes</a></li>
                     <li><a href="#contacto" class="hover:text-primary transition">Contacto</a></li>
                 </ul>
             </nav>
@@ -214,9 +251,11 @@
         <div class="md:hidden hidden bg-white py-4 px-4 shadow-md" id="mobileMenu">
             <ul class="space-y-3">
                 <li><a href="#inicio" class="block hover:text-primary transition">Inicio</a></li>
+                <li><a href="#quienes-somos" class="block hover:text-primary transition">¿Quiénes Somos?</a></li>
                 <li><a href="#servicios" class="block hover:text-primary transition">Servicios</a></li>
-                <li><a href="#portfolio" class="block hover:text-primary transition">Portfolio</a></li>
-                <li><a href="#sobre-nosotras" class="block hover:text-primary transition">Sobre Nosotras</a></li>
+                <li><a href="#equipo" class="block hover:text-primary transition">Equipo</a></li>
+                <li><a href="#experiencia" class="block hover:text-primary transition">Experiencia</a></li>
+                <li><a href="#planes" class="block hover:text-primary transition">Planes</a></li>
                 <li><a href="#contacto" class="block hover:text-primary transition">Contacto</a></li>
             </ul>
         </div>
@@ -224,17 +263,26 @@
 
     <!-- Hero Section rediseñado -->
     <section id="inicio" class="bg-[#fef7f0] py-16 md:py-24 relative overflow-hidden">
-    
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 hero-content fade-in">
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
-                    <span class="block">Potenciamos tu</span>
-                    <span class="gradient-text">presencia digital</span>
+                    <span class="block">CREAMOS, PUBLICAMOS Y</span>
+                    <span class="gradient-text">POTENCIAMOS TU</span>
+                    <span class="block">CONTENIDO EN REDES</span>
                 </h2>
                 
                 <p class="text-xl text-gray-700 mb-8">
-                    Creamos, publicamos y potenciamos tu contenido en redes para que tu marca sea vista, recordada y elegida.
+                    PARA QUE TU MARCA SEA VISTA, RECORDADA Y ELEGIDA
                 </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">MARKETING</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> GESTIÓN DE REDES</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> CREACIÓN DE CONTENIDO</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> ESTRATEGIAS QUE POTENCIAN TU MARCA</li>
+                    </ul>
+                </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-10">
                     <a href="#contacto" class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold py-4 px-8 rounded-full inline-block transition transform hover:scale-105 shadow-lg hover:shadow-xl text-center">
@@ -244,294 +292,122 @@
                         Nuestros servicios
                     </a>
                 </div>
-                
-                <div class="flex items-center space-x-6">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-3 floating-icon">
-                            <i class="fas fa-check"></i>
+            </div>
+            
+            <div class="md:w-1/2 mt-12 md:mt-0 scale-in">
+                <div class="hero-graphic relative flex flex-col items-center justify-center">
+                    <!-- Contenedor principal del gráfico -->
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 bg-[#fef7f0]">
+                        <!-- Círculo de fondo con gradiente -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-90 bg-[#fef7f0]"></div>
+                        
+                        <!-- Icono central -->
+                        <div class="absolute inset-0 flex items-center justify-center ">
+                            <div class="w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center shadow-xl border-8 border-white overflow-hidden bg-[#fef7f0]">
+                                <!-- Contenedor cuadrado forzado para la imagen -->
+                                <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden bg-[#fef7f0]">
+                                    <img src="./MN.ico" alt="Mandale Marketing" 
+                                         class="w-full h-full object-cover" 
+                                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                                </div>
+                                <!-- Elemento de respaldo circular grande -->
+                                <div class="hidden absolute inset-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
+                                    <span class="text-5xl md:text-6xl font-bold text-white">MN</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="text-gray-700">Resultados garantizados</span>
+                        
+                        <!-- Iconos de redes sociales alrededor -->
+                        <div class="absolute inset-0 rotating-icons">
+                            <!-- Instagram -->
+                            <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-instagram text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Facebook -->
+                            <div class="absolute top-6 -right-2 transform translate-x-1/2">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-facebook-f text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- TikTok -->
+                            <div class="absolute bottom-6 -right-2 transform translate-x-1/2">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-tiktok text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- YouTube -->
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-youtube text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- LinkedIn -->
+                            <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-linkedin-in text-white text-xl"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Twitter -->
+                            <div class="absolute top-6 -left-2 transform -translate-x-1/2">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-twitter text-white text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Texto descriptivo debajo -->
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-primary mb-3 margintop">Presencia en Redes Sociales</h3>
                     </div>
                 </div>
             </div>
-            
-      <div class="md:w-1/2 mt-12 md:mt-0 scale-in">
-    <div class="hero-graphic relative flex flex-col items-center justify-center">
-        <!-- Contenedor principal del gráfico -->
-        <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 bg-[#fef7f0]">
-            <!-- Círculo de fondo con gradiente -->
-            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-90 bg-[#fef7f0]"></div>
-            
-            <!-- Icono central -->
-            <div class="absolute inset-0 flex items-center justify-center ">
-                <div class="w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center shadow-xl border-8 border-white overflow-hidden bg-[#fef7f0]">
-                    <!-- Contenedor cuadrado forzado para la imagen -->
-                    <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden bg-[#fef7f0]">
-                        <img src="./MN.ico" alt="Mandale Marketing" 
-                             class="w-full h-full object-cover" 
-                             onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
-                    </div>
-                    <!-- Elemento de respaldo circular grande -->
-                    <div class="hidden absolute inset-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
-                        <span class="text-5xl md:text-6xl font-bold text-white">MN</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Iconos de redes sociales alrededor -->
-            <div class="absolute inset-0 rotating-icons">
-                <!-- Instagram -->
-                <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-instagram text-white text-xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Facebook -->
-                <div class="absolute top-6 -right-2 transform translate-x-1/2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-facebook-f text-white text-xl"></i>
-                    </div>
-                </div>
-                
-                <!-- TikTok -->
-                <div class="absolute bottom-6 -right-2 transform translate-x-1/2">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-tiktok text-white text-xl"></i>
-                    </div>
-                </div>
-                
-                <!-- YouTube -->
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-youtube text-white text-xl"></i>
-                    </div>
-                </div>
-                
-                <!-- LinkedIn -->
-                <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-linkedin-in text-white text-xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Twitter -->
-                <div class="absolute top-6 -left-2 transform -translate-x-1/2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                        <i class="fab fa-twitter text-white text-xl"></i>
-                    </div>
-                </div>
-            </div>
-            
-
         </div>
-        
-        <!-- Texto descriptivo debajo -->
-        <div class="text-center">
-            <h3 class="text-xl font-semibold text-primary mb-3 margintop">Presencia en Redes Sociales</h3>
-        </div>
-    </div>
-</div>
-
-<style>
-
-    .margintop{
-	margin-top:3vh;
-    }
-    
-    /* Animación de rotación para los iconos */
-    .rotating-icons {
-        animation: rotate 30s linear infinite;
-    }
-    
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    
-    /* Asegurar que los iconos giren en dirección contraria para mantenerse legibles */
-    .rotating-icons > div {
-        animation: rotate-reverse 30s linear infinite;
-    }
-    
-    @keyframes rotate-reverse {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(-360deg); }
-    }
-    
-    /* Efecto de flotación para los iconos individuales */
-    .rotating-icons > div > div {
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    .rotating-icons > div:nth-child(2) > div { animation-delay: 0.5s; }
-    .rotating-icons > div:nth-child(3) > div { animation-delay: 1s; }
-    .rotating-icons > div:nth-child(4) > div { animation-delay: 1.5s; }
-    .rotating-icons > div:nth-child(5) > div { animation-delay: 2s; }
-    .rotating-icons > div:nth-child(6) > div { animation-delay: 2.5s; }
-</style>
         
         <!-- Flecha indicadora -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#servicios" class="text-primary text-4xl">
+            <a href="#quienes-somos" class="text-primary text-4xl">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-12 bg-gray-50">
+    <!-- ¿Quiénes Somos? Section -->
+    <section id="quienes-somos" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="fade-in">
-                    <div class="stat-number" data-count="150">0</div>
-                    <p class="text-gray-600">Proyectos Completados</p>
-                </div>
-                <div class="fade-in">
-                    <div class="stat-number" data-count="50">0</div>
-                    <p class="text-gray-600">Clientes Satisfechos</p>
-                </div>
-                <div class="fade-in">
-                    <div class="stat-number" data-count="3">0</div>
-                    <p class="text-gray-600">Años de Experiencia</p>
-                </div>
-                <div class="fade-in">
-                    <div class="stat-number" data-count="12">0</div>
-                    <p class="text-gray-600">Premios Obtenidos</p>
-                </div>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">¿QUIÉNES SOMOS?</h2>
+            
+            <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                <p class="text-gray-700 mb-6">
+                    Mandale Marketing es una agencia creativa fundada por Naza & Nahi, profesionales apasionadas por la comunicación y el marketing digital. Nuestra misión es ayudar a marcas a destacarse, crecer y conectar de manera auténtica con su audiencia.
+                </p>
+                
+                <p class="text-gray-700 mb-6">
+                    Con una combinación de creatividad, estrategia y conocimiento del entorno digital, diseñamos soluciones personalizadas que responden a las necesidades de cada proyecto. Desde la planificación de contenidos hasta la construcción de identidad de marca, acompañamos a nuestros clientes en cada etapa, asegurando resultados medibles y consistentes.
+                </p>
+                
+                <p class="text-gray-700">
+                    Creemos en el poder de las ideas bien ejecutadas y en el valor de una estrategia integral, donde cada acción tiene un propósito y cada historia genera impacto.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="py-16 bg-white">
+    <!-- Equipo Section -->
+    <section id="equipo" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Nuestros Servicios</h2>
-            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Ofrecemos soluciones integrales de marketing digital para potenciar tu marca en redes sociales</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
-                        <i class="fas fa-hashtag text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">GESTIÓN DE REDES</h3>
-                    <p class="text-gray-600 mb-4">Administramos y optimizamos tus redes sociales para maximizar tu presencia digital y engagement con tu audiencia.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Community Manager</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Estrategia de contenidos</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Calendarización</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Interacción con seguidores</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
-                        <i class="fas fa-pencil-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">CREACIÓN DE CONTENIDO</h3>
-                    <p class="text-gray-600 mb-4">Diseñamos contenido visualmente atractivo y relevante que comunica efectivamente tu mensaje de marca.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Redactora Creativa</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Productora Audiovisual</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Fotografía profesional</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Diseño gráfico</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6 animate-pulse">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ESTRATEGIAS DE MARCA</h3>
-                    <p class="text-gray-600 mb-4">Desarrollamos estrategias personalizadas que aumentan tu visibilidad, reconocimiento y conversiones.</p>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Social Media Manager</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Análisis de datos</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Dirección creativa</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary mr-2"></i> Planificación estratégica</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Nuestro Portfolio</h2>
-            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Algunos de nuestros proyectos más destacados en redes sociales y marketing digital</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <span class="text-white text-lg font-poppins">Campaña Redes Sociales</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Branding para Restaurante</h3>
-                        <p class="text-gray-600 mb-4">Estrategia completa de redes sociales para un restaurante local, aumentando seguidores en un 200%.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Instagram</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Facebook</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Content Marketing</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-primary flex items-center justify-center">
-                        <span class="text-white text-lg font-poppins">Content Creation</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Campaña de Verano</h3>
-                        <p class="text-gray-600 mb-4">Creación de contenido audiovisual para una marca de ropa, generando un aumento del 150% en engagement.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">TikTok</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Reels</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Video Production</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-card bg-white rounded-lg overflow-hidden shadow-md fade-in">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <span class="text-white text-lg font-poppins">Estrategia Digital</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-poppins font-semibold mb-2 text-secondary">Lanzamiento de Producto</h3>
-                        <p class="text-gray-600 mb-4">Estrategia completa para el lanzamiento de a new product, alcanzando 500k de impresiones en una semana.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Estrategia</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Análisis</span>
-                            <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Lanzamiento</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in">
-                <a href="#" class="inline-flex items-center text-primary font-semibold group">
-                    Ver más proyectos
-                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!--Sobre Nosotras -->
-    <section id="sobre-nosotras" class="py-16 bg-[#fef7f0]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">Sobre Nosotras</h2>
-            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto fade-in">Dos apasionadas del marketing digital con la misión de hacer crecer tu marca</p>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-12 text-primary fade-in">Nuestro Equipo</h2>
             
             <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <!-- Naza -->
-                <div class="team-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                <div class="team-card bg-white p-8 rounded-lg shadow-md fade-in">
                     <div class="flex items-center mb-6">
                         <div class="w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
                             N
@@ -541,64 +417,353 @@
                             <p class="text-gray-600">Especialista en Estrategia Digital</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">Con más de 5 años de experiencia en marketing digital, me especializo en desarrollar estrategias que conectan marcas con su audiencia objetivo.</p>
-                    <div class="flex space-x-4">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Estrategia</span>
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Análisis</span>
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Branding</span>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-primary mb-2">Habilidades:</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> COMMUNITY MANAGER</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> CREADORA DE CONTENIDO</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> REDACTORA CREATIVA</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> PRODUCTORA DE CONTENIDO AUDIOVISUAL</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <!-- Nahi -->
-                <div class="team-card bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                <div class="team-card bg-white p-8 rounded-lg shadow-md fade-in">
                     <div class="flex items-center mb-6">
                         <div class="w-24 h-24 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6">
                             N
                         </div>
                         <div>
                             <h3 class="text-2xl font-poppins font-semibold text-secondary">Nahi</h3>
-                            <p class="text-gray-600">Creadora de Contenido & Community Manager</p>
+                            <p class="text-gray-600">Especialista en Marketing Digital</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">Mi pasión es crear contenido que inspire y conecte. Me especializo en gestión de comunidades y producción de contenido visual para redes sociales.</p>
-                    <div class="flex space-x-4">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Contenido</span>
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Community</span>
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">Fotografía</span>
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-primary mb-2">Habilidades:</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> SOCIAL MEDIA MANAGER</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> DUEÑA DE UN NEGOCIO ONLINE</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> EXPERTA EN ANALISIS DE DATOS</li>
+                            <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> DIRECTORA CREATIVA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">¿QUÉ HACEMOS?</h2>
+            
+            <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                <p class="text-gray-700 mb-6">
+                    En Mandale Marketing ayudamos a marcas, emprendedores y empresas a potenciar su presencia digital a traves de estrategias claras, creativas y efectivas.
+                </p>
+                
+                <p class="text-gray-700 mb-8">
+                    Somos un equipo de dos profesionales que combinamos gestión, creatividad y estrategia para acompañar a cada cliente de manera personalizada.
+                </p>
+                
+                <h3 class="text-xl font-poppins font-semibold mb-6 text-secondary">Nuestros principales servicios son:</h3>
+                
+                <div class="space-y-6">
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-semibold text-primary mb-2">COMMUNITY MANAGER:</h4>
+                        <p class="text-gray-700">Nos encargamos de la gestión integral de tus redes sociales: planificación, publicación, interacción con la comunidad y seguimiento de métricas.</p>
+                    </div>
+                    
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-semibold text-primary mb-2">CREACION DE CONTENIDO:</h4>
+                        <p class="text-gray-700">Diseñamos contenido visual y escrito adaptado a tu marca, con un estilo creativo y estrategico para generar conexión real con tu audiencia.</p>
+                    </div>
+                    
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-semibold text-primary mb-2">MARKETING DIGITAL:</h4>
+                        <p class="text-gray-700">Estrategias de marketing personalizadas para alcanzar los objetivos de tu negocio.</p>
+                    </div>
+                    
+                    <div class="service-card bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-semibold text-primary mb-2">SOCIAL MEDIA MANAGEMENT:</h4>
+                        <p class="text-gray-700">Desarrollamos estrategias digitales a medida, analizamos resultados y optimizamos campañas para lograr mayor alcance, interacción y conversiones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">EDUCACIÓN</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in">
+                <ul class="text-gray-700 space-y-4">
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Tecnicatura en marketing (Universidad FASTA)</li>
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Community manager & Social Media Manager (Lookeo tu perfil)</li>
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Publicidad en meta ADS (Gotica Metrics) (Desnudando el marketing)</li>
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Copywriting: escribir para vender (Luzzi Digital)</li>
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Marca personal para emprendedoras (Mujeres que emprenden)</li>
+                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Cursos varios de marketing digital y estrategias</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Razones Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">3 RAZONES PARA TRABAJAR CON NOSOTRAS</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ESTRATEGIA</h3>
+                    <p class="text-gray-700">
+                        No poseemos imágenes hechas en canva, ni se trata de publicar por publicar.
+                        Cada contenido tiene un propósito para nosotras, pensado con estrategia, análisis y un objetivo: atraer clientes, generar confianza, y hacer crecer tu negocio online.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ACOMPAÑAMIENTO</h3>
+                    <p class="text-gray-700">
+                        No solo gestionamos redes, nos involucraos en cada proyecto, trabajando juntos, asesorándote en cada paso que damos, analizando en conjunto que funciona y que no, y optimizando la estrategia para que veas resultados.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">EXPERIENCIA</h3>
+                    <p class="text-gray-700">
+                        Nos apasiona lo que hacemos, ambas somos emprendedoras y dueñas de negocios digitales exitosos hace 5 años, eso nos hace comprender de primera mano las necesidades y desafíos que enfrentan otros negocios y también en nuestros años de estudio hemos creado contenido para otras marcas, a modo de poner en practica lo aprendido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Section -->
+    <section id="experiencia" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-12 text-primary fade-in">EXPERIENCIA</h2>
+            
+            <!-- Glow Art -->
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in mb-12">
+                <h3 class="text-2xl font-poppins font-semibold mb-4 text-secondary">GLOW ART - ARTE EN RESINA</h3>
+                <h4 class="text-xl font-semibold mb-6 text-primary">MI PROPIO NEGOCIO</h4>
+                
+                <p class="text-gray-700 mb-6">
+                    Soy Nahiara, fundadora de Glow art una marca que cree en Abril del 2023, que en un poco mas de un año logre consolidarla como un negocio rentable y sostenible, gracias a una estrategia basada en la creación de productos originales, la gestión de redes sociales y el desarrollo de comunidad. Hoy vivo exclusivamente de este proyecto, con un flujo constante de ventas al por menor y al por mayor.
+                </p>
+                
+                <p class="text-gray-700 mb-6">
+                    La marca tiene una comunidad fiel y activa, clientes que realizan pedidos recurrentes, y compradores que me eligen de manera orgánica, alcanzados por el contenido que genero de forma estratégica, y varias veces potenciados con pauta.
+                </p>
+                
+                <p class="text-gray-700">
+                    Este camino me permitió no solo posicionar mi marca en un rubro competitivo, sino también adquirir experiencia de primera mano en marketing digital, construcción de marca, manejo de comunidades, etc.
+                    Y hoy quiero compartir con vos los conocimientos que fui adquiriendo, ayudándote a que logres lo mismo con tu propia marca.
+                </p>
+                
+                <!-- Estadísticas -->
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Visualizaciones orgánicas de contenido</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-gray-700 font-medium">Visualizaciones</p>
+                                <p class="text-2xl font-bold text-secondary">50,562</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Seguidores + No seguidores</p>
+                                <p class="text-2xl font-bold text-secondary">0,8%</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-medium">Últimos 90 días (3 de jun. - 31 de ago.)</p>
+                                <p class="text-2xl font-bold text-secondary">480,333</p>
+                                <p class="text-gray-600">- 5,6% de anuncios</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Visualizaciones en el perfil de los ultimos 90 días</h4>
+                        <p class="text-gray-700">(Gráfico o imagen iría aquí)</p>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-gradient-to-r from-primary to-secondary rounded-lg p-8 text-white fade-in">
-                <h3 class="text-2xl font-poppins font-bold mb-6">¿Por qué trabajar con nosotras?</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-sync-alt text-2xl"></i>
+            <!-- Mar del Plata Resinas -->
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in mb-12">
+                <h3 class="text-2xl font-poppins font-semibold mb-6 text-secondary">CONTENIDO CREADO DESDE GLOW ART PARA LA MARCA "MAR DEL PLATA RESINAS"</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Antes del contenido (08/08/25)</h4>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">mardelplataresinas</p>
+                            <p class="text-gray-600">19 publicaciones | 130 seguidores | 162 seguidos</p>
                         </div>
-                        <h4 class="font-semibold">Enfoque integral</h4>
-                        <p class="text-sm mt-2">Abarcamos todos los aspectos del marketing digital</p>
+                        <div>
+                            <p class="text-gray-700 font-medium">Compras y ventas minoristas</p>
+                            <ul class="text-gray-600 text-sm list-disc list-inside">
+                                <li>Materiales para crear con resina</li>
+                                <li>Resina epoxi premium</li>
+                                <li>Moldes, pigmentos y más</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-chart-line text-2xl"></i>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Después del contenido (01/09/25)</h4>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">mardelplataresinas</p>
+                            <p class="text-gray-600">37 publicaciones | 606 seguidores | 342 seguidos</p>
                         </div>
-                        <h4 class="font-semibold">Resultados medibles</h4>
-                        <p class="text-sm mt-2">Nos enfocamos en métricas y ROI tangible</p>
+                        <div>
+                            <p class="text-gray-700 font-medium">Compras y ventas minoristas</p>
+                            <ul class="text-gray-600 text-sm list-disc list-inside">
+                                <li>Todo lo necesario para crear con resina epoxi</li>
+                                <li>Moldes, pigmentos, accesorios y más</li>
+                                <li>Envíos rápidos a todo Argentina</li>
+                                <li>Segama o 982 - MAD</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-lightbulb text-2xl"></i>
-                        </div>
-                        <h4 class="font-semibold">Creatividad sin límites</h4>
-                        <p class="text-sm mt-2">Ideas innovadoras para destacar tu marca</p>
+                </div>
+            </div>
+            
+            <!-- Otros trabajos -->
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in">
+                <h3 class="text-2xl font-poppins font-semibold mb-6 text-secondary">OTROS TRABAJOS DE CONTENIDO</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">@mardelplataresinas</h4>
+                        <p class="text-gray-700 mb-4">Creación de contenido para Instagram</p>
+                        <p class="text-gray-600">(Imágenes de ejemplo irían aquí)</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-handshake text-2xl"></i>
-                        </div>
-                        <h4 class="font-semibold">Comunicación constante</h4>
-                        <p class="text-sm mt-2">Siempre estamos en contacto para mantenerte informado</p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold mb-4 text-primary">@glow.art.resina</h4>
+                        <p class="text-gray-700 mb-4">Creación de contenido para Instagram</p>
+                        <p class="text-gray-600">(Imágenes de ejemplo irían aquí)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Planes Section -->
+    <section id="planes" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">PLANES</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Plan Verde -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-2xl font-poppins font-semibold mb-4 text-secondary">PLAN VERDE</h3>
+                    
+                    <p class="text-gray-700 mb-6 italic">
+                        ¿Tenes el contenido pero necesitas que alguien se encargue de optimizarlo y publicarlo? Esta es la solución, porque con este plan te olvidas de tener que subir las fotos y videos que tenes juntando polvo en tu galería!
+                    </p>
+                    
+                    <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye este plan?</h4>
+                    <ul class="text-gray-700 space-y-3 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Definición de público objetivo</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Análisis de perfil y optimización de biografía</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Gestión completa de Instagram y Facebook:</li>
+                        <li class="ml-6 text-gray-600">Calendario de contenidos, armado de publicaciones e historias, optimización diaria, gestión de sorteos, concursos y comunidad</li>
+                        <li class="ml-8 text-gray-600">• 8 posteos y 16 historias mensuales</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Seguimiento y análisis de métricas y resultados</li>
+                    </ul>
+                    
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg mt-6">
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Adicionalmente:</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Una reunión para análisis de marca y objetivos</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Soporte y asesoría continua, reunión periódica para revisión de resultados</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Carpeta en drive / galería de apple compartida para subir el contenido sin que se pierda la calidad</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Plan Rosa -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-2xl font-poppins font-semibold mb-4 text-secondary">PLAN ROSA</h3>
+                    
+                    <p class="text-gray-700 mb-6 italic">
+                        ¿No tenes tiempo para encargarte de las redes ni del contenido de tu marca? No te preocupes, este plan es tu solución, vas a poder olvidarte de tus redes y dejarlo en nuestras manos.
+                    </p>
+                    
+                    <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye este plan?</h4>
+                    <ul class="text-gray-700 space-y-3 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Definición de público objetivo</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Análisis de competencia</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> FODA de la marca</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Análisis de perfil y optimización de biografía</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Gestión completa de Instagram y Facebook: Calendario de contenidos, armado de publicaciones e historias, optimización diaria, gestión de sorteos, concursos y comunidad</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Desarrollo de guiones y storytelling</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> 20 posteos y 40 historias mensuales</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Seguimiento y análisis de métricas y resultados</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Foto producto / look book</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Edición y armado de publicaciones y reels</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Fotos/videos en local o domicilio del cliente</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> El contenido puede ser producido internamente con nuestra participación o la de integrantes de la marca, o bien con participación de integrantes externos según necesidades y objetivos de la marca</li>
+                    </ul>
+                    
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg mt-6">
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Adicionalmente:</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Una reunión previa para analizar la marca, detectar fortalezas y debilidades, definir objetivos, definición de estilo y paleta de colores, planificación de campañas, etc</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Soporte y asesoría continua, reuniones periódicas para revisión de resultados</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Jornadas de grabación mensuales</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Calendario de contenidos</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Participación nuestra en caso de ser requerido en videos o fotos</li>
+                            <li class="flex items-start"><i class="fas fa-dollar-sign text-primary mr-2 mt-1"></i> EL PAGO ES MENSUAL, SE REALIZA POR ADELANTADO</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Plan Contenido -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                    <h3 class="text-2xl font-poppins font-semibold mb-4 text-secondary">PLAN CONTENIDO</h3>
+                    
+                    <p class="text-gray-700 mb-6">
+                        Nos encargamos de generar el contenido visual que tu marca necesita para destacarse en redes y plataformas digitales.
+                    </p>
+                    
+                    <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye este plan?</h4>
+                    <ul class="text-gray-700 space-y-3 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Sesiones de fotos y videos en tu local o espacio de trabajo (productos, equipo, instalaciones, ambiente)</li>
+                        <li class="ml-6 text-gray-600">Producción y edición profesional de fotos (iluminación, retoque, optimización de calidad)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Producción y edición de videos cortos y dinámicos (ideales para reels, stories, TikTok o anuncios)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Brainstorming y planificación de ideas de contenido adaptadas a tu rubro y objetivos</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Guía estratégica de uso: te entregamos recomendaciones de cómo, cuándo y en qué formato usar el material para potenciar tus redes y atraer clientes</li>
+                        <li class="flex items-start"><i class="fas fa-check text-primary mr-2 mt-1"></i> Entrega de todo el material editado y listo para publicar, en la calidad y formato que necesites</li>
+                    </ul>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg mt-6">
+                        <h4 class="text-lg font-semibold mb-2 text-primary">¿Qué NO incluye?</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1"></i> Gestión de redes sociales (subir posteos, responder mensajes, armar copies o calendario)</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="text-gray-700 mt-6 italic">
+                        Este plan es ideal si querés encargarte vos mismo de tus redes, pero necesitás contenido de calidad y una estrategia clara para que tu marca luzca profesional.
+                    </p>
+                    
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg mt-6">
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Adicionalmente:</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Una reunión previa a comenzar para analizar la marca, las estrategias de contenido y objetivos del cliente</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Una jornada mensual que se pacta con anterioridad donde se graba y fotografía todo lo necesario para el cliente (jornadas de máximo 4hs)</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Armado de guía estratégica para subir el contenido en base a sus objetivos</li>
+                            <li class="flex items-start"><i class="fas fa-plus text-primary mr-2 mt-1"></i> Participación nuestra en caso de ser requerido en videos o fotos</li>
+                            <li class="flex items-start"><i class="fas fa-dollar-sign text-primary mr-2 mt-1"></i> EL PAGO ES MENSUAL, SE REALIZA POR ADELANTADO</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -606,14 +771,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="py-16 bg-white">
+    <section id="contacto" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">¿Listo para potenciar tu marca?</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto fade-in">Contáctanos y hablemos sobre cómo podemos ayudarte a alcanzar tus objetivos</p>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">CONTACTO</h2>
             
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2 fade-in">
-                    <form id="contactForm" class="bg-gray-50 rounded-lg shadow-md p-8">
+                    <form id="contactForm" class="bg-white rounded-lg shadow-md p-8">
                         <div class="mb-6">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
@@ -651,7 +815,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Email</h4>
-                                    <p>info@mandalemarketing.com</p>
+                                    <p>mandalemarketing.nm@gmail.com</p>
                                 </div>
                             </div>
                             
@@ -661,7 +825,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Teléfono</h4>
-                                    <p>+54 11 2345-6789</p>
+                                    <p>+54 9 223 123-4567</p>
                                 </div>
                             </div>
                             
@@ -671,7 +835,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Horario</h4>
-                                    <p>Luenes a Viernes: 9am - 6pm</p>
+                                    <p>Lunes a Viernes: 9am - 6pm</p>
                                 </div>
                             </div>
                         </div>
@@ -763,37 +927,6 @@
                 document.getElementById('contactForm').reset();
             }
         });
-
-        // Animated counter for stats
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
-
-        function animateCounter() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = Math.ceil(target / speed);
-                
-                if (count < target) {
-                    counter.innerText = count + increment;
-                    setTimeout(() => animateCounter(), 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Start counter animation when stats section is in viewport
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector('.bg-gray-50'));
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
