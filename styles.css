@@ -1,0 +1,222 @@
+/* Configuración de Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+    scroll-margin-top: 3rem; /* Altura aproximada del header */
+}
+
+/* Configuración personalizada de Tailwind */
+:root {
+    --primary: #D62C65;
+    --secondary: #1D6356;
+    --dark: #2D3748;
+}
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'TAM Rosebud';
+    src: url('https://fonts.cdnfonts.com/s/85400/TAMRosebud.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.rosebud-font {
+    font-family: 'TAM Rosebud', cursive;
+}
+
+/* Transiciones y animaciones de tarjetas */
+.service-card, .portfolio-card, .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover, .portfolio-card:hover, .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Patrón del hero */
+.hero-pattern {
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,245,248,1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Números de estadísticas */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #D62C65 0%, #1D6356 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Slides de testimonios */
+.testimonial-slide {
+    display: none;
+}
+.testimonial-slide.active {
+    display: block;
+}
+
+/* Efectos de aparición */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto de escalado */
+.scale-in {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+.scale-in.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Efecto de parallax */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Animación de iconos flotantes */
+.floating-icon {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hero section mejorado */
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #D62C65 0%, #1D6356 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Efecto de brillo en botones */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.shine-effect:hover:after {
+    opacity: 1;
+    animation: shine 1.5s forwards;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* Animaciones para el gráfico del hero */
+.rotating-circle {
+    animation: rotate 30s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.keyword-float {
+    animation: keyword-float 6s ease-in-out infinite;
+}
+
+@keyframes keyword-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.connector-line {
+    opacity: 0.6;
+}
+
+/* Ajustar el tamaño de fuente para que las palabras quepan mejor */
+.keyword-text {
+    font-size: 9px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+/* Animación de rotación para los iconos */
+.rotating-icons {
+    animation: rotate 30s linear infinite;
+}
+
+/* Asegurar que los iconos giren en dirección contraria para mantenerse legibles */
+.rotating-icons > div {
+    animation: rotate-reverse 30s linear infinite;
+}
+
+@keyframes rotate-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* Efecto de flotación para los iconos individuales */
+.rotating-icons > div > div {
+    animation: float 6s ease-in-out infinite;
+}
+
+.rotating-icons > div:nth-child(2) > div { animation-delay: 0.5s; }
+.rotating-icons > div:nth-child(3) > div { animation-delay: 1s; }
+.rotating-icons > div:nth-child(4) > div { animation-delay: 1.5s; }
+.rotating-icons > div:nth-child(5) > div { animation-delay: 2s; }
+.rotating-icons > div:nth-child(6) > div { animation-delay: 2.5s; }
+
+.margintop {
+    margin-top: 3vh;
+}
+
+.fade-slide-down {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fade-slide-down.show {
+    transform: translateY(0);
+    opacity: 1;
+}
