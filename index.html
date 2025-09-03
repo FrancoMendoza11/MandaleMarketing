@@ -227,40 +227,85 @@
 </head>
 <body class="font-arimo bg-white text-gray-800">
     <!-- Header -->
-    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-3xl font-bold text-primary">MANDALE<span class="text-secondary">MARKETING</span></h1>
-            </div>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="#inicio" class="hover:text-primary transition">Inicio</a></li>
-                    <li><a href="#quienes-somos" class="hover:text-primary transition">¿Quiénes Somos?</a></li>
-                    <li><a href="#servicios" class="hover:text-primary transition">Servicios</a></li>
-                    <li><a href="#equipo" class="hover:text-primary transition">Equipo</a></li>
-                    <li><a href="#experiencia" class="hover:text-primary transition">Experiencia</a></li>
-                    <li><a href="#planes" class="hover:text-primary transition">Planes</a></li>
-                    <li><a href="#contacto" class="hover:text-primary transition">Contacto</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden text-primary" id="mobileMenuButton">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-        <div class="md:hidden hidden bg-white py-4 px-4 shadow-md" id="mobileMenu">
-            <ul class="space-y-3">
-                <li><a href="#inicio" class="block hover:text-primary transition">Inicio</a></li>
-                <li><a href="#quienes-somos" class="block hover:text-primary transition">¿Quiénes Somos?</a></li>
-                <li><a href="#servicios" class="block hover:text-primary transition">Servicios</a></li>
-                <li><a href="#equipo" class="block hover:text-primary transition">Equipo</a></li>
-                <li><a href="#experiencia" class="block hover:text-primary transition">Experiencia</a></li>
-                <li><a href="#planes" class="block hover:text-primary transition">Planes</a></li>
-                <li><a href="#contacto" class="block hover:text-primary transition">Contacto</a></li>
-            </ul>
-        </div>
-    </header>
+	<header class="bg-white/90 backdrop-blur-md shadow-md py-4 sticky top-0 z-50 transition">
+	    <div class="container mx-auto px-4 flex justify-between items-center">
+		<!-- Logo -->
+		<div class="flex items-center">
+		    <h1 class="text-3xl font-extrabold tracking-tight">
+		        <span class="text-primary">MANDALE</span><span class="text-secondary">MARKETING</span>
+		    </h1>
+		</div>
+		
+		<!-- Nav desktop -->
+		<nav class="hidden md:block">
+		    <ul class="flex space-x-8">
+		        <li>
+		            <a href="#inicio" class="relative group transition">
+		                Inicio
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#quienes-somos" class="relative group transition">
+		                ¿Quiénes Somos?
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#servicios" class="relative group transition">
+		                Servicios
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#equipo" class="relative group transition">
+		                Equipo
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#experiencia" class="relative group transition">
+		                Experiencia
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#planes" class="relative group transition">
+		                Planes
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="#contacto" class="relative group transition">
+		                Contacto
+		                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+		            </a>
+		        </li>
+		    </ul>
+		</nav>
+
+		<!-- Botón hamburguesa -->
+		<button class="md:hidden text-primary hover:text-secondary transition" id="mobileMenuButton">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+		        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+		    </svg>
+		</button>
+	    </div>
+
+	    <!-- Menu mobile -->
+	    <div class="md:hidden hidden bg-white py-4 px-6 shadow-md border-t border-gray-100" id="mobileMenu">
+		<ul class="space-y-3">
+		    <li><a href="#inicio" class="block hover:text-secondary transition">Inicio</a></li>
+		    <li><a href="#quienes-somos" class="block hover:text-secondary transition">¿Quiénes Somos?</a></li>
+		    <li><a href="#servicios" class="block hover:text-secondary transition">Servicios</a></li>
+		    <li><a href="#equipo" class="block hover:text-secondary transition">Equipo</a></li>
+		    <li><a href="#experiencia" class="block hover:text-secondary transition">Experiencia</a></li>
+		    <li><a href="#planes" class="block hover:text-secondary transition">Planes</a></li>
+		    <li><a href="#contacto" class="block hover:text-secondary transition">Contacto</a></li>
+		</ul>
+	    </div>
+	</header>
+
 
     <!-- Hero Section rediseñado -->
     <section id="inicio" class="bg-[#fef7f0] py-16 md:py-24 relative overflow-hidden ajustarheight">
@@ -319,45 +364,28 @@
                         
                         <!-- Iconos de redes sociales alrededor -->
                         <div class="absolute inset-0 rotating-icons">
+
+                            
                             <!-- Instagram -->
-                            <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                            <div class="absolute top-6 -right-2 transform translate-x-1/2">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
                                     <i class="fab fa-instagram text-white text-xl"></i>
                                 </div>
                             </div>
+                       
+       
                             
-                            <!-- Facebook -->
-                            <div class="absolute top-6 -right-2 transform translate-x-1/2">
-                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                                    <i class="fab fa-facebook-f text-white text-xl"></i>
+                            <!-- WhatsApp -->
+                            <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                                    <i class="fab fa-whatsapp text-white text-xl"></i>
                                 </div>
                             </div>
                             
                             <!-- TikTok -->
-                            <div class="absolute bottom-6 -right-2 transform translate-x-1/2">
-                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                                    <i class="fab fa-tiktok text-white text-xl"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- YouTube -->
-                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                                    <i class="fab fa-youtube text-white text-xl"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- LinkedIn -->
-                            <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
-                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                                    <i class="fab fa-linkedin-in text-white text-xl"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- Twitter -->
                             <div class="absolute top-6 -left-2 transform -translate-x-1/2">
                                 <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                                    <i class="fab fa-twitter text-white text-xl"></i>
+                                    <i class="fab fa-tiktok text-white text-xl"></i>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +393,7 @@
                     
                     <!-- Texto descriptivo debajo -->
                     <div class="text-center">
-                        <h3 class="text-xl font-semibold text-primary mb-3 margintop">Presencia en Redes Sociales</h3>
+                        <h3 class="text-xl font-semibold text-primary mb-3 margintop">Nuestras redes sociales</h3>
                     </div>
                 </div>
             </div>
@@ -616,7 +644,7 @@
                 <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
                     <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ACOMPAÑAMIENTO</h3>
                     <p class="text-gray-700">
-                        No solo gestionamos redes, nos involucraos en cada proyecto, trabajando juntos, asesorándote en cada paso que damos, analizando en conjunto que funciona y que no, y optimizando la estrategia para que veas resultados.
+                        No solo gestionamos redes, nos involucramos en cada proyecto, trabajando juntos, asesorándote en cada paso que damos, analizando en conjunto que funciona y que no, y optimizando la estrategia para que veas resultados.
                     </p>
                 </div>
                 
@@ -644,16 +672,20 @@
                 <div class="lg:col-span-3">
                     <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
 
-                        <!-- Header con logo -->
-                        <div class="flex items-start space-x-4 mb-6">
-                            <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                                <span class="text-white font-bold text-2xl">GA</span>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-poppins font-semibold text-secondary">GLOW ART - ARTE EN RESINA</h3>
-                                <h4 class="text-lg font-medium text-primary">MI PROPIO NEGOCIO</h4>
-                            </div>
-                        </div>
+			<!-- Header con logo -->
+			<div class="flex items-start space-x-4 mb-6">
+			<div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden">
+			    <img src="glowartico.png" alt="Logo Glow Art" 
+				 class="w-[150%] h-[140%] object-cover object-[27%_center]">
+			</div>
+
+			    <div>
+				<h3 class="text-2xl font-poppins font-semibold text-secondary">GLOW ART - ARTE EN RESINA</h3>
+				<h4 class="text-lg font-medium text-primary">MI PROPIO NEGOCIO</h4>
+			    </div>
+			</div>
+
+
 
                         <!-- Contenido completo -->
                         <div class="space-y-4 text-gray-700 leading-relaxed">
@@ -765,19 +797,19 @@
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-y-16 lg:gap-8 items-stretch">
                 
                 <!-- Plan Verde -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border border-gray-200 flex flex-col">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-2 border-green-500 flex flex-col">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-leaf text-2xl text-green-600"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-2">PLAN VERDE</h3>
-                        <p class="text-gray-600 text-base italic">
+                        <h3 class="text-2xl font-semibold text-green-600 mb-2">PLAN VERDE</h3>
+                        <p class="text-green-500 text-base italic">
                             ¿Tienes el contenido pero necesitas optimización y publicación?
                         </p>
                     </div>
                     
                     <div class="flex-grow">
-                        <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye?</h4>
+                        <h4 class="text-lg font-semibold mb-4 text-green-600">¿Qué incluye?</h4>
                         <ul class="text-gray-700 space-y-3 mb-6">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mr-3 mt-1 flex-shrink-0"></i>
@@ -792,8 +824,8 @@
                                 <span>Gestión completa de Instagram y Facebook</span>
                             </li>
                             <li class="flex items-start ml-6">
-                                <i class="fas fa-arrow-right text-gray-400 mr-3 mt-1 flex-shrink-0"></i>
-                                <span class="text-gray-600">8 posteos y 16 historias mensuales</span>
+                                <i class="fas fa-arrow-right text-green-400 mr-3 mt-1 flex-shrink-0"></i>
+                                <span class="text-green-600">8 posteos y 16 historias mensuales</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mr-3 mt-1 flex-shrink-0"></i>
@@ -803,9 +835,9 @@
                         
                         <div class="bg-green-50 p-4 rounded-lg">
                             <h5 class="font-semibold text-green-700 mb-2">Incluye además:</h5>
-                            <ul class="text-base text-gray-600 space-y-1">
+                            <ul class="text-green-600 space-y-1">
                                 <li>• Reunión para análisis de marca</li>
-                                <li>• Soporte y asesoría continua</li>
+                                <li>• Soporte and asesoría continua</li>
                                 <li>• Carpeta compartida en Drive</li>
                             </ul>
                         </div>
@@ -819,7 +851,7 @@
                 </div>
                 
                 <!-- Plan Rosa (Featured) -->
-                <div class="bg-white rounded-xl shadow-xl p-8 card-hover fade-in border border-gray-200 featured-plan flex flex-col relative">
+                <div class="bg-white rounded-xl shadow-xl p-8 card-hover fade-in border-2 border-primary flex flex-col relative">
                     <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                         <span class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
                             MÁS POPULAR
@@ -828,10 +860,10 @@
                     
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-star text-2xl text-pink-600"></i>
+                            <i class="fas fa-star text-2xl text-primary"></i>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary mb-2">PLAN ROSA</h3>
-                        <p class="text-gray-600 text-base italic">
+                        <p class="text-primary text-base italic">
                             Solución completa: contenido y gestión de redes
                         </p>
                     </div>
@@ -840,38 +872,38 @@
                         <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye?</h4>
                         <ul class="text-gray-700 space-y-2 mb-6 text-base">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span>Todo lo del Plan Verde +</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span>Análisis de competencia y FODA</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span>Desarrollo de guiones y storytelling</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span><strong>20 posteos y 40 historias mensuales</strong></span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span>Foto producto / look book</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
                                 <span>Edición y armado de reels</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-pink-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Fotos/videos en local o domicilio</span>
+                                <i class="fas fa-check text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Fotos/videos en local or domicilio</span>
                             </li>
                         </ul>
                         
                         <div class="bg-pink-50 p-4 rounded-lg">
-                            <h5 class="font-semibold text-pink-700 mb-2">Incluye además:</h5>
-                            <ul class="text-base text-gray-600 space-y-1">
+                            <h5 class="font-semibold text-primary mb-2">Incluye además:</h5>
+                            <ul class="text-primary space-y-1">
                                 <li>• Reunión previa completa de marca</li>
                                 <li>• Jornadas de grabación mensuales</li>
                                 <li>• Calendario de contenidos</li>
@@ -884,86 +916,104 @@
                         <button class="w-full bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
                             Elegir Plan Rosa
                         </button>
-                        <p class="text-base text-gray-500 mt-2">Pago mensual por adelantado</p>
+                        <p class="text-primary text-sm mt-2 opacity-80">Pago mensual por adelantado</p>
                     </div>
                 </div>
                 
-                <!-- Plan Contenido -->
-                <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border border-gray-200 flex flex-col">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-camera text-2xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-2">PLAN CONTENIDO</h3>
-                        <p class="text-gray-600 text-base italic">
-                            Solo creación de contenido visual profesional
-                        </p>
-                    </div>
-                    
-                    <div class="flex-grow">
-                        <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye?</h4>
-                        <ul class="text-gray-700 space-y-3 mb-6 text-base">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Sesiones de fotos y videos profesionales</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Producción y edición profesional</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Videos cortos para reels и stories</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Brainstorming de ideas de contenido</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Guía estratégica de uso</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <span>Material listo para publicar</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="bg-red-50 p-4 rounded-lg mb-4">
-                            <h5 class="font-semibold text-red-700 mb-2 text-base">No incluye:</h5>
-                            <p class="text-base text-gray-600">Gestión de redes sociales</p>
-                        </div>
-                        
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <h5 class="font-semibold text-blue-700 mb-2">Incluye además:</h5>
-                            <ul class="text-base text-gray-600 space-y-1">
-                                <li>• Reunión previa de análisis</li>
-                                <li>• Jornada mensual de grabación (4h)</li>
-                                <li>• Guía estratégica personalizada</li>
-                                <li>• Participación en contenido</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 text-center">
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                            Elegir Plan Contenido
-                        </button>
-                        <p class="text-base text-gray-500 mt-2">Pago mensual por adelantado</p>
-                    </div>
-                </div>
-                
-            </div>
+               <!-- Plan Contenido -->
+		<div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-2 border-rose-400 flex flex-col relative overflow-hidden">
+		    <!-- Efecto de gradiente para la mezcla de colores -->
+		    <div class="absolute inset-0 bg-gradient-to-br from-green-100/40 to-rose-100/40 opacity-50 z-0"></div>
+		    
+		    <div class="text-center mb-6 relative z-10">
+			<div class="w-16 h-16 bg-gradient-to-br from-green-400 to-rose-400 rounded-full flex items-center justify-center mx-auto mb-4">
+			    <i class="fas fa-camera text-2xl text-white"></i>
+			</div>
+			<h3 class="text-2xl font-semibold bg-gradient-to-r from-green-500 to-rose-500 bg-clip-text text-transparent mb-2">
+			    PLAN CONTENIDO
+			</h3>
+			<p class="bg-gradient-to-r from-green-500 to-rose-500 bg-clip-text text-transparent text-base italic">
+			    Solo creación de contenido visual profesional
+			</p>
+		    </div>
+		    
+		    <div class="flex-grow relative z-10">
+			<h4 class="text-lg font-semibold bg-gradient-to-r from-green-500 to-rose-500 bg-clip-text text-transparent mb-4">
+			    ¿Qué incluye?
+			</h4>
+			<ul class="text-gray-700 space-y-3 mb-6 text-base">
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Sesiones de fotos y videos profesionales</span>
+			    </li>
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Producción y edición profesional</span>
+			    </li>
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Videos cortos para reels y stories</span>
+			    </li>
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Brainstorming de ideas de contenido</span>
+			    </li>
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Guía estratégica de uso</span>
+			    </li>
+			    <li class="flex items-start">
+				<div class="bg-gradient-to-br from-green-400 to-rose-400 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+				    <i class="fas fa-check text-white text-xs"></i>
+				</div>
+				<span>Material listo para publicar</span>
+			    </li>
+			</ul>
+			
+			<div class="bg-rose-50 p-4 rounded-lg mb-4">
+			    <h5 class="font-semibold text-rose-700 mb-2 text-base">No incluye:</h5>
+			    <p class="text-rose-600">Gestión de redes sociales</p>
+			</div>
+			
+			<div class="bg-gradient-to-br from-green-100/40 to-rose-100/40 p-4 rounded-lg">
+			    <h5 class="font-semibold bg-gradient-to-r from-green-500 to-rose-500 bg-clip-text text-transparent mb-2">
+				Incluye además:
+			    </h5>
+			    <ul class="text-gray-700 space-y-1">
+				<li>• Reunión previa de análisis</li>
+				<li>• Jornada mensual de grabación (4h)</li>
+				<li>• Guía estratégica personalizada</li>
+				<li>• Participación en contenido</li>
+			    </ul>
+			</div>
+		    </div>
+		    
+		    <div class="mt-8 text-center relative z-10">
+			<button class="w-full bg-gradient-to-r from-green-500 to-rose-500 hover:from-green-600 hover:to-rose-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+			    Elegir Plan Contenido
+			</button>
+			<p class="text-gray-500 mt-2 text-sm">Pago mensual por adelantado</p>
+		    </div>
+		</div>
+	    </div>
             
             <!-- Call to Action -->
             <div class="text-center mt-12 fade-in">
                 <p class="text-gray-600 mb-4">¿No estás seguro qué plan elegir?</p>
-                <button class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
-                    <a href="#footer">
-                        <i class="fas fa-arrow-down mr-2"></i>
-                        Consultá ahora mismo
-                    </a>
-                </button>
+                <a href="#contacto" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition duration-300 inline-block">
+                    <i class="fas fa-comments mr-2"></i>
+                    Consultá ahora mismo
+                </a>
             </div>
         </div>
     </section>
@@ -1003,7 +1053,8 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Ubicación</h4>
-                                    <p>Buenos Aires, Argentina</p>
+                                    <p>Mar del Plata, Argentina</p>
+				    <p>Santa Clara del Mar, Argentina</p>
                                 </div>
                             </div>
                             
@@ -1033,7 +1084,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Horario</h4>
-                                    <p>Lunes a Viernes: 9am - 6pm</p>
+                                    <p>Lunes a Viernes: 10:00 a 13:00 y 17:00 a 20:00</p>
                                 </div>
                             </div>
                         </div>
@@ -1044,11 +1095,6 @@
                                 <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-linkedin-in"></i>
                                 </a>
                                 <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
                                     <i class="fab fa-tiktok"></i>
@@ -1072,13 +1118,6 @@
                 <div class="flex space-x-4">
                     <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
                     <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
                         <i class="fab fa-tiktok"></i>
                     </a>
