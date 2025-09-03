@@ -1086,37 +1086,20 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+        <!-- Contact Section -->
     <section id="contacto" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">CONTACTO</h2>
             
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2 fade-in">
-                    <form id="contactForm" class="bg-white rounded-lg shadow-md p-8">
-                        <div class="mb-6">
-                            <label for="name" class="block text-base font-medium text-gray-700 mb-1">Nombre</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-base font-medium text-gray-700 mb-1">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-base font-medium text-gray-700 mb-1">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none" required></textarea>
-                        </div>
-                        <button type="submit" class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold py-3 px-8 rounded-full transition w-full">Enviar mensaje</button>
-                    </form>
-                </div>
+            <div class="flex flex-col md:flex-row gap-12 justify-center">
                 
-                <div class="md:w-1/2 fade-in">
+                <div class="md:w-1/2 max-w-2xl fade-in">
                     <div class="bg-gradient-to-br from-primary to-secondary rounded-lg p-8 h-full text-white">
-                        <h3 class="text-2xl font-poppins font-bold mb-6">Información de Contacto</h3>
+                        <h3 class="text-2xl font-poppins font-bold mb-6 text-center">Información de Contacto</h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -1127,7 +1110,7 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
@@ -1137,7 +1120,7 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div>
@@ -1147,7 +1130,7 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <div>
@@ -1157,12 +1140,11 @@
                             </div>
                         </div>
                         
-                        <div class="mt-8">
+                        <div class="mt-8 text-center">
                             <h4 class="font-semibold mb-4">Síguenos en redes</h4>
-                            <div class="flex space-x-4">
+                            <div class="flex justify-center space-x-4">
                                 <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
                                     <i class="fab fa-instagram"></i>
-                                </a>
                                 </a>
                                 <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
                                     <i class="fab fa-tiktok"></i>
@@ -1240,20 +1222,6 @@
             }
         });
 
-        // Form validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && message) {
-                // Here you would typically send the form data to a server
-                alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-                document.getElementById('contactForm').reset();
-            }
-        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
