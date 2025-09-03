@@ -223,6 +223,17 @@
             margin-top: 3vh;
         }
 
+        .fade-slide-down {
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .fade-slide-down.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
     </style>
 </head>
 <body class="font-arimo bg-white text-gray-800">
@@ -232,7 +243,7 @@
             <div class="flex items-center">
                 <h1 class="text-3xl font-bold text-primary">MANDALE<span class="text-secondary">MARKETING</span></h1>
             </div>
-            <nav class="hidden md:block">
+            <nav class="hidden xl:block">
                 <ul class="flex space-x-8">
                     <li><a href="#inicio" class="hover:text-primary transition">Inicio</a></li>
                     <li><a href="#quienes-somos" class="hover:text-primary transition">¿Quiénes Somos?</a></li>
@@ -243,21 +254,22 @@
                     <li><a href="#contacto" class="hover:text-primary transition">Contacto</a></li>
                 </ul>
             </nav>
-            <button class="md:hidden text-primary" id="mobileMenuButton">
+            <button class="xl:hidden text-primary" id="mobileMenuButton">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
-        <div class="md:hidden hidden bg-white py-4 px-4 shadow-md" id="mobileMenu">
+        
+        <div class="xl:hidden hidden absolute top-full left-0 w-full bg-primary/90 py-4 px-4 shadow-md fade-slide-down" id="mobileMenu">
             <ul class="space-y-3">
-                <li><a href="#inicio" class="block hover:text-primary transition">Inicio</a></li>
-                <li><a href="#quienes-somos" class="block hover:text-primary transition">¿Quiénes Somos?</a></li>
-                <li><a href="#servicios" class="block hover:text-primary transition">Servicios</a></li>
-                <li><a href="#equipo" class="block hover:text-primary transition">Equipo</a></li>
-                <li><a href="#experiencia" class="block hover:text-primary transition">Experiencia</a></li>
-                <li><a href="#planes" class="block hover:text-primary transition">Planes</a></li>
-                <li><a href="#contacto" class="block hover:text-primary transition">Contacto</a></li>
+                <li><a href="#inicio" class="block text-center text-white hover:text-gray-200 transition">Inicio</a></li>
+                <li><a href="#quienes-somos" class="block text-center text-white hover:text-gray-200 transition">¿Quiénes Somos?</a></li>
+                <li><a href="#servicios" class="block text-center text-white hover:text-gray-200 transition">Servicios</a></li>
+                <li><a href="#equipo" class="block text-center text-white hover:text-gray-200 transition">Equipo</a></li>
+                <li><a href="#experiencia" class="block text-center text-white hover:text-gray-200 transition">Experiencia</a></li>
+                <li><a href="#planes" class="block text-center text-white hover:text-gray-200 transition">Planes</a></li>
+                <li><a href="#contacto" class="block text-center text-white hover:text-gray-200 transition">Contacto</a></li>
             </ul>
         </div>
     </header>
@@ -365,7 +377,7 @@
                     
                     <!-- Texto descriptivo debajo -->
                     <div class="text-center">
-                        <h3 class="text-xl font-semibold text-primary mb-3 margintop">Presencia en Redes Sociales</h3>
+                        <h3 class="text-xl font-semibold text-primary mb-3 margintop">Nuestras Redes Sociales</h3>
                     </div>
                 </div>
             </div>
@@ -393,7 +405,7 @@
                 </div>
                 
                 <!-- Texto -->
-                <div class="md:w-3/5 bg-gray-50 p-8 rounded-lg shadow-md fade-in">
+                <div class="md:w-3/5 bg-gray-100 p-8 rounded-lg shadow-md fade-in">
                     <p class="text-gray-700 mb-6">
                         Mandale Marketing es una agencia creativa fundada por Naza & Nahi, profesionales apasionadas por la comunicación y el marketing digital. Nuestra misión es ayudar a marcas a destacarse, crecer y conectar de manera auténtica con su audiencia.
                     </p>
@@ -411,7 +423,7 @@
     </section>
 
     <!-- Equipo Section -->
-    <section id="equipo" class="py-20 bg-gray-50">
+    <section id="equipo" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6 lg:px-12">
             <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 text-primary">
             Nuestro Equipo
@@ -495,7 +507,7 @@
 
 
     <!-- Servicios Section -->
-    <section id="servicios" class="py-16 bg-gray-50">
+    <section id="servicios" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">¿QUÉ HACEMOS?</h2>
             
@@ -582,19 +594,66 @@
     </section>
 
     <!-- Educación Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">EDUCACIÓN</h2>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-12 text-primary fade-in">EDUCACIÓN</h2>
             
-            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md fade-in">
-                <ul class="text-gray-700 space-y-4">
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Tecnicatura en marketing (Universidad FASTA)</li>
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Community manager & Social Media Manager (Lookeo tu perfil)</li>
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Publicidad en meta ADS (Gotica Metrics) (Desnudando el marketing)</li>
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Copywriting: escribir para vender (Luzzi Digital)</li>
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Marca personal para emprendedoras (Mujeres que emprenden)</li>
-                    <li class="flex items-start"><i class="fas fa-graduation-cap text-primary mr-3 mt-1"></i> Cursos varios de marketing digital y estrategias</li>
-                </ul>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Educación 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-university text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Tecnicatura en Marketing</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Universidad FASTA</p>
+                    </div>
+                    
+                    <!-- Educación 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-users text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Community Manager & Social Media Manager</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Lookeo tu perfil</p>
+                    </div>
+                    
+                    <!-- Educación 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-bullhorn text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Publicidad en Meta ADS</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Gotica Metrics - Desnudando el marketing</p>
+                    </div>
+                    
+                    <!-- Educación 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-pen-fancy text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Copywriting: Escribir para Vender</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Luzzi Digital</p>
+                    </div>
+                    
+                    <!-- Educación 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-female text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Marca Personal para Emprendedoras</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Mujeres que emprenden</p>
+                    </div>
+                    
+                    <!-- Educación 6 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-primary fade-in">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-chart-line text-primary text-lg"></i>
+                            <h3 class="font-poppins font-semibold text-secondary">Cursos de Marketing Digital y Estrategias</h3>
+                        </div>
+                        <p class="text-gray-600 text-base">Formación continua especializada</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -602,36 +661,83 @@
     <!-- Razones Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">3 RAZONES PARA TRABAJAR CON NOSOTRAS</h2>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-12 text-primary fade-in">3 RAZONES PARA TRABAJAR CON NOSOTRAS</h2>
             
-            <div class="max-w-4xl mx-auto space-y-8">
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ESTRATEGIA</h3>
-                    <p class="text-gray-700">
-                        No poseemos imágenes hechas en canva, ni se trata de publicar por publicar.
-                        Cada contenido tiene un propósito para nosotras, pensado con estrategia, análisis y un objetivo: atraer clientes, generar confianza, y hacer crecer tu negocio online.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ACOMPAÑAMIENTO</h3>
-                    <p class="text-gray-700">
-                        No solo gestionamos redes, nos involucraos en cada proyecto, trabajando juntos, asesorándote en cada paso que damos, analizando en conjunto que funciona y que no, y optimizando la estrategia para que veas resultados.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md fade-in">
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">EXPERIENCIA</h3>
-                    <p class="text-gray-700">
-                        Nos apasiona lo que hacemos, ambas somos emprendedoras y dueñas de negocios digitales exitosos hace 5 años, eso nos hace comprender de primera mano las necesidades y desafíos que enfrentan otros negocios y también en nuestros años de estudio hemos creado contenido para otras marcas, a modo de poner en practica lo aprendido.
-                    </p>
+            <div class="max-w-7xl mx-auto mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Razón 1: Estrategia -->
+                    <div class="bg-white rounded-xl shadow-xl p-8 card-hover fade-in border border-gray-200 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-lg font-semibold whitespace-nowrap">
+                                1
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6 mt-4">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chess text-2xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ESTRATEGIA</h3>
+                        </div>
+                        
+                        <p class="text-gray-700 text-center flex-grow">
+                            No poseemos imágenes hechas en canva, ni se trata de publicar por publicar.
+                            Cada contenido tiene un propósito para nosotras, pensado con 
+                            <span class="font-bold text-primary">estrategia</span>, 
+                            <span class="font-bold text-primary">análisis</span> 
+                            y un 
+                            <span class="font-bold text-primary">objetivo</span>: 
+                            atraer clientes, generar confianza, y hacer crecer tu negocio online.
+                        </p>
+
+                    </div>
+                    
+                    <!-- Razón 2: Acompañamiento -->
+                    <div class="bg-white rounded-xl shadow-xl p-8 card-hover fade-in border border-gray-200 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-lg font-semibold whitespace-nowrap">
+                                2
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6 mt-4">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-handshake text-2xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">ACOMPAÑAMIENTO</h3>
+                        </div>
+                        
+                        <p class="text-gray-700 text-center flex-grow">
+                            No solo gestionamos redes, sino que también nos involucramos en cada proyecto, trabajando juntos, asesorándote en cada paso que damos, analizando en conjunto que funciona y que no, y optimizando la estrategia para que veas resultados.
+                        </p>
+                    </div>
+                    
+                    <!-- Razón 3: Experiencia -->
+                    <div class="bg-white rounded-xl shadow-xl p-8 card-hover fade-in border border-gray-200 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                            <span class="bg-primary text-white px-4 py-2 rounded-full text-lg font-semibold whitespace-nowrap">
+                                3
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6 mt-4">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-trophy text-2xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-poppins font-semibold mb-4 text-secondary">EXPERIENCIA</h3>
+                        </div>
+                        
+                        <p class="text-gray-700 text-center flex-grow">
+                            Nos apasiona lo que hacemos, ambas somos emprendedoras y dueñas de negocios digitales exitosos hace 5 años, eso nos hace comprender de primera mano las necesidades y desafíos que enfrentan otros negocios y también en nuestros años de estudio hemos creado contenido para otras marcas, a modo de poner en practica lo aprendido.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
       <!-- Experiencia Section -->
-    <section id="experiencia" class="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
+    <section id="experiencia" class="py-12 md:py-16 bg-gray-100">
         <div class="container mx-auto px-4 max-w-7xl">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-8 md:mb-12 text-primary fade-in">
                 EXPERIENCIA
@@ -693,7 +799,7 @@
                         <h4 class="text-lg font-semibold text-secondary mb-4 text-center">PERFIL DE GLOW ART</h4>
                         
                         <!-- Imagen del perfil -->
-                        <div class="bg-gray-50 rounded-lg p-3 mb-4">
+                        <div class="bg-gray-100 rounded-lg p-3 mb-4">
                             <img src="glowart3.png" alt="Perfil de Glow Art en Instagram" class="w-full h-auto rounded-lg shadow-md">
                         </div>
                         
@@ -733,13 +839,13 @@
                         <h4 class="text-lg font-semibold text-secondary mb-4">CONTENIDO CREADO PARA "MAR DEL PLATA RESINAS"</h4>
                         
                         <!-- Imagen antes -->
-                        <div class="mb-4 bg-gray-50 rounded-lg p-3">
+                        <div class="mb-4 bg-gray-100 rounded-lg p-3">
                             <p class="text-base font-medium text-red-600 mb-2 text-center">Antes del contenido (08/08/25)</p>
                             <img src="mardelplataresesinas1.png" alt="Perfil antes de la gestión" class="w-full h-auto rounded-lg border border-red-200">
                         </div>
                         
                         <!-- Imagen después -->
-                        <div class="mb-4 bg-gray-50 rounded-lg p-3">
+                        <div class="mb-4 bg-gray-100 rounded-lg p-3">
                             <p class="text-base font-medium text-green-600 mb-2 text-center">Después del contenido (01/09/25)</p>
                             <img src="mardelplataresinas2.png" alt="Perfil después de la gestión" class="w-full h-auto rounded-lg border border-green-200">
                         </div>
@@ -770,14 +876,14 @@
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-leaf text-2xl text-green-600"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-2">PLAN VERDE</h3>
+                        <h3 class="text-2xl font-semibold text-green-600 mb-2">PLAN VERDE</h3>
                         <p class="text-gray-600 text-base italic">
                             ¿Tienes el contenido pero necesitas optimización y publicación?
                         </p>
                     </div>
                     
                     <div class="flex-grow">
-                        <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye?</h4>
+                        <h4 class="text-lg font-semibold mb-4 text-green-600">¿Qué incluye?</h4>
                         <ul class="text-gray-700 space-y-3 mb-6">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-green-500 mr-3 mt-1 flex-shrink-0"></i>
@@ -812,9 +918,11 @@
                     </div>
                     
                     <div class="mt-8 text-center">
-                        <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                            Elegir Plan Verde
-                        </button>
+                        <a href="#contacto">
+                            <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                                Elegir Plan Verde
+                            </button>
+                        </a>
                     </div>
                 </div>
                 
@@ -881,9 +989,11 @@
                     </div>
                     
                     <div class="mt-8 text-center">
-                        <button class="w-full bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                            Elegir Plan Rosa
-                        </button>
+                        <a href="#contacto">
+                            <button class="w-full bg-primary hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                                Elegir Plan Rosa
+                            </button>
+                        </a>
                         <p class="text-base text-gray-500 mt-2">Pago mensual por adelantado</p>
                     </div>
                 </div>
@@ -894,14 +1004,14 @@
                         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-camera text-2xl text-blue-600"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-2">PLAN CONTENIDO</h3>
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-2">PLAN CONTENIDO</h3>
                         <p class="text-gray-600 text-base italic">
                             Solo creación de contenido visual profesional
                         </p>
                     </div>
                     
                     <div class="flex-grow">
-                        <h4 class="text-lg font-semibold mb-4 text-primary">¿Qué incluye?</h4>
+                        <h4 class="text-lg font-semibold mb-4 text-blue-600">¿Qué incluye?</h4>
                         <ul class="text-gray-700 space-y-3 mb-6 text-base">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-blue-500 mr-3 mt-1 flex-shrink-0"></i>
@@ -946,9 +1056,11 @@
                     </div>
                     
                     <div class="mt-8 text-center">
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                            Elegir Plan Contenido
-                        </button>
+                        <a href="#contacto">
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                                Elegir Plan Contenido
+                            </button>
+                        </a>
                         <p class="text-base text-gray-500 mt-2">Pago mensual por adelantado</p>
                     </div>
                 </div>
@@ -958,18 +1070,18 @@
             <!-- Call to Action -->
             <div class="text-center mt-12 fade-in">
                 <p class="text-gray-600 mb-4">¿No estás seguro qué plan elegir?</p>
-                <button class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
-                    <a href="#footer">
+                <a href="#footer">
+                    <button class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
                         <i class="fas fa-arrow-down mr-2"></i>
                         Consultá ahora mismo
-                    </a>
-                </button>
+                    </button>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="py-16 bg-gray-50">
+    <section id="contacto" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-4 text-primary fade-in">CONTACTO</h2>
             
@@ -1003,7 +1115,8 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Ubicación</h4>
-                                    <p>Buenos Aires, Argentina</p>
+                                    <p>Mar del Plata, Argentina</p>
+                                    <p>Santa Clara del Mar, Argentina</p>
                                 </div>
                             </div>
                             
@@ -1033,7 +1146,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-semibold">Horario</h4>
-                                    <p>Lunes a Viernes: 9am - 6pm</p>
+                                    <p>Lunes a Viernes: 10:00hs a 13:00hs y 17:00hs a 20:00hs</p>
                                 </div>
                             </div>
                         </div>
@@ -1060,6 +1173,20 @@
             </div>
         </div>
     </section>
+
+
+     <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5491167913596" 
+        target="_blank" 
+        class="fixed bottom-10 right-10 bg-green-500 text-white 
+                w-12 h-12 sm:w-16 sm:h-16 
+                flex items-center justify-center rounded-full shadow-lg 
+                hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-xl sm:text-3xl"></i>
+    </a>
+
+
+
 
     <!-- Footer -->
     <footer id="footer" class="bg-secondary text-white py-12">
@@ -1090,6 +1217,7 @@
         </div>
     </footer>
 
+
     <script>
         // Animación de aparición al hacer scroll
         function checkScroll() {
@@ -1108,7 +1236,14 @@
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');   // Primero hacemos visible el menú
+                setTimeout(() => menu.classList.add('show'), 10); // Activamos la animación
+            } else {
+                menu.classList.remove('show');     // Revertimos animación
+                setTimeout(() => menu.classList.add('hidden'), 300); // Ocultamos después de la animación
+            }
         });
 
         // Form validation
