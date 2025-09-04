@@ -5,7 +5,7 @@
             EXPERIENCIA
         </h2>
 
-        <!-- Glow Art -->
+        <!-- Primera experiencia visible (Glow Art) -->
         <div class="mb-12">
             <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
                 <!-- Columna izquierda (3/7) -->
@@ -73,7 +73,7 @@
                         </div>
                         
                         <div class="mt-4 text-center">
-                            <a href="#" class="inline-flex items-center text-primary font-semibold text-sm">
+                            <a href="https://www.instagram.com/glowart.mdq/" target="_blank" class="inline-flex items-center text-primary font-semibold text-sm">
                                 <i class="fab fa-instagram mr-2"></i>
                                 Ver perfil completo
                             </a>
@@ -105,254 +105,375 @@
             </div>
         </div>
 
-        <!-- 3N Servicio Técnico -->
-        <div class="mb-12">
-            <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
-                <!-- Misma estructura que Glow Art pero para 3N -->
-                <div class="lg:col-span-3">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
-                        <div class="flex items-start space-x-4 mb-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                                <i class="fas fa-tools text-2xl text-blue-600"></i>
+        <!-- Botón "Ver más" -->
+        <div class="text-center">
+            <button id="openModalBtn" class="bg-primary text-white font-semibold py-3 px-6 rounded-full hover:bg-secondary transition-all duration-300 shadow-lg">
+                Ver más
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal con todas las experiencias -->
+    <div id="experienciaModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden overflow-y-auto">
+        <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-7xl w-full m-4 relative max-h-[90vh] overflow-y-auto">
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-8 md:mb-12 text-primary">
+                TODAS LAS EXPERIENCIAS
+            </h2>
+
+            <!-- Contenido completo de todas las experiencias -->
+
+            <!-- Glow Art -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-poppins font-semibold text-secondary text-center mb-6">Glow Art - Arte en Resina</h3>
+                <hr class="border-t-2 border-gray-300 mb-8">
+                <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
+                    <!-- Columna izquierda (3/7) -->
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
+                            <!-- Header con logo -->
+                            <div class="flex items-start space-x-4 mb-6">
+                                <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden">
+                                    <img src="glowartico.png" alt="Logo Glow Art" class="w-[150%] h-[140%] object-cover object-[27%_center]">
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-poppins font-semibold text-secondary">GLOW ART - ARTE EN RESINA</h3>
+                                    <h4 class="text-lg font-medium text-primary">MI PROPIO NEGOCIO</h4>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-poppins font-semibold text-secondary">3N SERVICIO TÉCNICO</h3>
-                                <h4 class="text-lg font-medium text-primary">REPARACIONES Y MANTENIMIENTO</h4>
+
+                            <!-- Contenido completo -->
+                            <div class="space-y-4 text-gray-700 leading-relaxed">
+                                <p>Soy Nahiara, fundadora de Glow art una marca que cree en Abril del 2023, que en un poco mas de un año logre consolidarla como un negocio rentable y sostenible, gracias a una estrategia basada en la creación de productos originales, la gestión de redes sociales y el desarrollo de comunidad. Hoy vivo exclusivamente de este proyecto, con un flujo constante de ventas al por menor y al por mayor.</p>
+                                <p>La marca tiene una comunidad fiel y activa, clientes que realizan pedidos recurrentes, y compradores que me eligen de manera orgánica, alcanzados por el contenido que genero de forma estratégica, y varias veces potenciados con pauta.</p>
+                                <p class="italic text-gray-600">Este camino me permitió no solo posicionar mi marca en un rubro competitivo, sino también adquirir experiencia de primera mano en marketing digital, construcción de marca, manejo de comunidades, etc. Y hoy quiero compartir con vos los conocimientos que fui adquiriendo, ayudándote a que logres lo mismo con tu propia marca.</p>
+                            </div>
+
+                            <!-- Estadísticas -->
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 flex flex-col items-center">
+                                    <img src="glowartimg.png" alt="Estadísticas de visualizaciones" class="w-full h-auto mb-3 rounded-lg">
+                                    <p class="text-base text-gray-600 text-center">Visualizaciones orgánicas</p>
+                                    <p class="text-xl font-bold text-secondary">50,562</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 flex flex-col items-center">
+                                    <img src="glowartimg2.png" alt="Estadísticas últimos 90 días" class="w-full h-auto mb-3 rounded-lg">
+                                    <p class="text-base text-gray-600 text-center">Últimos 90 días</p>
+                                    <p class="text-xl font-bold text-secondary">480,333</p>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="space-y-4 text-gray-700 leading-relaxed">
-                            <p>Servicio técnico especializado con presencia en redes sociales. Creamos contenido que muestra el proceso de reparación, testimonios de clientes y tips de mantenimiento.</p>
-                            <p>El contenido audiovisual ha permitido aumentar la confianza de los clientes y demostrar la expertise técnica del equipo.</p>
-                        </div>
-
-			<div class="mt-6 space-y-8">
-			  <!-- Antes de realizar contenido -->
-			  <div class="bg-white rounded-xl shadow-md overflow-hidden">
-			    <img src="./3N VIDEOS/3n.png" alt="Antes de realizar contenido" class="w-full max-h-[600px] object-contain">
-			    <div class="p-4 text-center">
-			      <h3 class="text-xl font-semibold">Antes de realizar contenido</h3>
-			      <p class="text-gray-600 text-base">El perfil contaba con menor alcance y menos seguidores antes de implementar la estrategia de contenido.</p>
-			    </div>
-			  </div>
-
-			  <!-- Después de realizar contenido -->
-			  <div class="bg-white rounded-xl shadow-md overflow-hidden">
-			    <img src="./3N VIDEOS/3n2.png" alt="Después de realizar contenido" class="w-full max-h-[600px] object-contain">
-			    <div class="p-4 text-center">
-			      <h3 class="text-xl font-semibold">Después de realizar contenido</h3>
-			      <p class="text-gray-600 text-base">El perfil mostró un notable incremento de seguidores, interacciones y publicaciones gracias a la estrategia aplicada.</p>
-			    </div>
-			  </div>
-
-			  <!-- Visualizaciones -->
-			  <div class="bg-white rounded-xl shadow-md overflow-hidden">
-			    <img src="./3N VIDEOS/3n3.png" alt="Visualizaciones" class="w-full max-h-[600px] object-contain">
-			    <div class="p-4 text-center">
-			      <h3 class="text-xl font-semibold">Visualizaciones</h3>
-			      <p class="text-gray-600 text-base">Se alcanzaron miles de visualizaciones, con un alto porcentaje de usuarios nuevos que no seguían la cuenta.</p>
-			    </div>
-			  </div>
-			</div>
-
-
-
                     </div>
-                </div>
 
-                <!-- Columna central para carrusel de videos -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
-                        
-                        <!-- Espacio para 5 videos -->
-		        <div class="lg:col-span-2">
-		            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
-		                <h4 class="text-lg font-semibold text-secondary mb-4 text-center">CONTENIDO REALIZADO</h4>
-		                
-		                <div class="space-y-4">
-		                    <video class="w-full rounded-lg shadow-md" controls>
-		                        <source src="./3N VIDEOS/3n.mp4" type="video/mp4">
-		                        Tu navegador no soporta el video.
-		                    </video>
-		                    <video class="w-full rounded-lg shadow-md" controls>
-		                        <source src="./3N VIDEOS/3n2.mp4" type="video/mp4">
-		                        Tu navegador no soporta el video.
-		                    </video>
-		                    <video class="w-full rounded-lg shadow-md" controls>
-		                        <source src="./3N VIDEOS/3n3.mp4" type="video/mp4">
-		                        Tu navegador no soporta el video.
-		                    </video>
-		                    <video class="w-full rounded-lg shadow-md" controls>
-		                        <source src="./3N VIDEOS/3n4.mp4" type="video/mp4">
-		                        Tu navegador no soporta el video.
-		                    </video>
-		                    <video class="w-full rounded-lg shadow-md" controls>
-		                        <source src="./3N VIDEOS/3n5.mp4" type="video/mp4">
-		                        Tu navegador no soporta el video.
-		                    </video>
-		                </div>
-		            </div>
-                </div>
-                    </div>
-                </div>
-
-                <!-- Columna derecha para resultados -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
-                        <h4 class="text-lg font-semibold text-secondary mb-4">RESULTADOS ALCANZADOS</h4>
-                        
-                        <div class="space-y-4">
-                            <div class="bg-blue-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-blue-700">Consultas por WhatsApp</h5>
-                                <p class="text-blue-600">+200% incremento</p>
+                    <!-- Columna central (2/7) -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100 sticky top-6">
+                            <h4 class="text-lg font-semibold text-secondary mb-4 text-center">PERFIL DE GLOW ART</h4>
+                            
+                            <div class="bg-gray-100 rounded-lg p-3 mb-4">
+                                <img src="glowart3.png" alt="Perfil de Glow Art en Instagram" class="w-full h-auto rounded-lg shadow-md">
                             </div>
                             
-                            <div class="bg-green-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-green-700">Clientes Nuevos</h5>
-                                <p class="text-green-600">45% vía Instagram</p>
+                            <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg p-4">
+                                <h5 class="font-semibold text-primary mb-3 text-center">Resultados Destacados</h5>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700">Publicaciones</span>
+                                        <span class="font-bold text-secondary">216</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700">Seguidores</span>
+                                        <span class="font-bold text-secondary">12,9K</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700">Visualizaciones (30 días)</span>
+                                        <span class="font-bold text-secondary">188,6K</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <a href="https://www.instagram.com/glowart.mdq/" target="_blank" class="inline-flex items-center text-primary font-semibold text-sm">
+                                    <i class="fab fa-instagram mr-2"></i>
+                                    Ver perfil completo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha (2/7) -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                            <h4 class="text-lg font-semibold text-secondary mb-4">CONTENIDO CREADO PARA "MAR DEL PLATA RESINAS"</h4>
+                            
+                            <div class="mb-4 bg-gray-100 rounded-lg p-3">
+                                <p class="text-base font-medium text-red-600 mb-2 text-center">Antes del contenido (08/08/25)</p>
+                                <img src="mardelplataresesinas1.png" alt="Perfil antes de la gestión" class="w-full h-auto rounded-lg border border-red-200">
+                            </div>
+                            
+                            <div class="mb-4 bg-gray-100 rounded-lg p-3">
+                                <p class="text-base font-medium text-green-600 mb-2 text-center">Después del contenido (01/09/25)</p>
+                                <img src="mardelplataresinas2.png" alt="Perfil después de la gestión" class="w-full h-auto rounded-lg border border-green-200">
+                            </div>
+
+                            <div class="mt-4 bg-green-100 rounded-lg p-3">
+                                <p class="text-center text-green-700 font-bold">+376% crecimiento en seguidores</p>
+                                <p class="text-center text-green-600 text-sm">de 130 a 606 seguidores</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Dolce Mare -->
-        <div class="mb-12">
-                 <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
-                <!-- Misma estructura que Glow Art pero para 3N -->
-                <div class="lg:col-span-3">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
-                        <div class="flex items-start space-x-4 mb-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                                <i class="fas fa-tools text-2xl text-blue-600"></i>
+            <!-- 3N Servicio Técnico -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-poppins font-semibold text-secondary text-center mb-6">3N Servicio Técnico</h3>
+                <hr class="border-t-2 border-gray-300 mb-8">
+                <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
+                    <!-- Misma estructura que Glow Art pero para 3N -->
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
+                            <div class="flex items-start space-x-4 mb-6">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-tools text-2xl text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-poppins font-semibold text-secondary">3N SERVICIO TÉCNICO</h3>
+                                    <h4 class="text-lg font-medium text-primary">REPARACIONES Y MANTENIMIENTO</h4>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-poppins font-semibold text-secondary">Dolce Mare</h3>
-                                <h4 class="text-lg font-medium text-primary">Tienda de Pantuflas</h4>
+                            
+                            <div class="space-y-4 text-gray-700 leading-relaxed">
+                                <p>Servicio técnico especializado con presencia en redes sociales. Creamos contenido que muestra el proceso de reparación, testimonios de clientes y tips de mantenimiento.</p>
+                                <p>El contenido audiovisual ha permitido aumentar la confianza de los clientes y demostrar la expertise técnica del equipo.</p>
                             </div>
-                        </div>                
+
+                            <div class="mt-6 space-y-8">
+                              <!-- Antes de realizar contenido -->
+                              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                                <img src="./3N VIDEOS/3n.png" alt="Antes de realizar contenido" class="w-full max-h-[600px] object-contain">
+                                <div class="p-4 text-center">
+                                  <h3 class="text-xl font-semibold">Antes de realizar contenido</h3>
+                                  <p class="text-gray-600 text-base">El perfil contaba con menor alcance y menos seguidores antes de implementar la estrategia de contenido.</p>
+                                </div>
+                              </div>
+
+                              <!-- Después de realizar contenido -->
+                              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                                <img src="./3N VIDEOS/3n2.png" alt="Después de realizar contenido" class="w-full max-h-[600px] object-contain">
+                                <div class="p-4 text-center">
+                                  <h3 class="text-xl font-semibold">Después de realizar contenido</h3>
+                                  <p class="text-gray-600 text-base">El perfil mostró un notable incremento de seguidores, interacciones y publicaciones gracias a la estrategia aplicada.</p>
+                                </div>
+                              </div>
+
+                              <!-- Visualizaciones -->
+                              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                                <img src="./3N VIDEOS/3n3.png" alt="Visualizaciones" class="w-full max-h-[600px] object-contain">
+                                <div class="p-4 text-center">
+                                  <h3 class="text-xl font-semibold">Visualizaciones</h3>
+                                  <p class="text-gray-600 text-base">Se alcanzaron miles de visualizaciones, con un alto porcentaje de usuarios nuevos que no seguían la cuenta.</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Columna central para carrusel de videos -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
-                        
-                        <!-- Espacio para 3 videos -->
-                        <div class="space-y-4">
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 1</span>
+                    <!-- Columna central para carrusel de videos -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
+                            <!-- Espacio para 5 videos -->
+                            <div class="lg:col-span-2">
+                                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
+                                    <h4 class="text-lg font-semibold text-secondary mb-4 text-center">CONTENIDO REALIZADO</h4>
+                                    
+                                    <div class="space-y-4">
+                                        <video class="w-full rounded-lg shadow-md" controls>
+                                            <source src="./3N VIDEOS/3n.mp4" type="video/mp4">
+                                            Tu navegador no soporta el video.
+                                        </video>
+                                        <video class="w-full rounded-lg shadow-md" controls>
+                                            <source src="./3N VIDEOS/3n2.mp4" type="video/mp4">
+                                            Tu navegador no soporta el video.
+                                        </video>
+                                        <video class="w-full rounded-lg shadow-md" controls>
+                                            <source src="./3N VIDEOS/3n3.mp4" type="video/mp4">
+                                            Tu navegador no soporta el video.
+                                        </video>
+                                        <video class="w-full rounded-lg shadow-md" controls>
+                                            <source src="./3N VIDEOS/3n4.mp4" type="video/mp4">
+                                            Tu navegador no soporta el video.
+                                        </video>
+                                        <video class="w-full rounded-lg shadow-md" controls>
+                                            <source src="./3N VIDEOS/3n5.mp4" type="video/mp4">
+                                            Tu navegador no soporta el video.
+                                        </video>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 2</span>
-                            </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 3</span>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha para resultados -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                            <h4 class="text-lg font-semibold text-secondary mb-4">RESULTADOS ALCANZADOS</h4>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-700">Consultas por WhatsApp</h5>
+                                    <p class="text-blue-600">+200% incremento</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-green-700">Clientes Nuevos</h5>
+                                    <p class="text-green-600">45% vía Instagram</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-      
             </div>
-        </div>
 
-               <!-- Dolce Mare -->
-        <div class="mb-12">
-                 <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
-                <!-- Misma estructura que Glow Art pero para 3N -->
-                <div class="lg:col-span-3">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
-                        <div class="flex items-start space-x-4 mb-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                                <i class="fas fa-tools text-2xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-poppins font-semibold text-secondary">Franco Service</h3>
-                                <h4 class="text-lg font-medium text-primary">Servicio Técnico</h4>
-                            </div>
-                        </div>                
+            <!-- Dolce Mare -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-poppins font-semibold text-secondary text-center mb-6">Dolce Mare - Tienda de Pantuflas</h3>
+                <hr class="border-t-2 border-gray-300 mb-8">
+                <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
+                    <!-- Misma estructura que Glow Art pero para Dolce Mare -->
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
+                            <div class="flex items-start space-x-4 mb-6">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-tools text-2xl text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-poppins font-semibold text-secondary">Dolce Mare</h3>
+                                    <h4 class="text-lg font-medium text-primary">Tienda de Pantuflas</h4>
+                                </div>
+                            </div>                
+                        </div>
                     </div>
-                </div>
 
-                <!-- Columna central para carrusel de videos -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
-                        
-                        <!-- Espacio para 4 videos -->
-                        <div class="space-y-4">
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 1</span>
-                            </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 2</span>
-                            </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 3</span>
-                            </div>
-				 <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 4</span>
+                    <!-- Columna central para carrusel de videos -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
+                            <!-- Espacio para 3 videos -->
+                            <div class="space-y-4">
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 1</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 2</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 3</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-      
             </div>
-        </div>
-        <!-- Lohar Cosmetics -->
-        <div class="mb-12">
-                                        <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
-                <!-- Misma estructura que Glow Art pero para 3N -->
-                <div class="lg:col-span-3">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
-                        <div class="flex items-start space-x-4 mb-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
-                                <i class="fas fa-tools text-2xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-poppins font-semibold text-secondary">Lohar Cosmetics</h3>
-                                <h4 class="text-lg font-medium text-primary">Tienda de Pantuflas</h4>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-4 text-gray-700 leading-relaxed">
-                            <p>Servicio técnico especializado con presencia en redes sociales. Creamos contenido que muestra el proceso de reparación, testimonios de clientes y tips de mantenimiento.</p>
-                            <p>El contenido audiovisual ha permitido aumentar la confianza de los clientes y demostrar la expertise técnica del equipo.</p>
-                        </div>
 
-                        <!-- Espacio para 3 fotos -->
-                        <div class="mt-6 grid grid-cols-3 gap-2">
-                            <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
-                                <span class="text-gray-500 text-sm">Foto 1</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
-                                <span class="text-gray-500 text-sm">Foto 2</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
-                                <span class="text-gray-500 text-sm">Foto 3</span>
+            <!-- Franco Service -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-poppins font-semibold text-secondary text-center mb-6">Franco Service - Servicio Técnico</h3>
+                <hr class="border-t-2 border-gray-300 mb-8">
+                <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
+                    <!-- Misma estructura que Glow Art pero para Franco Service -->
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
+                            <div class="flex items-start space-x-4 mb-6">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-tools text-2xl text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-poppins font-semibold text-secondary">Franco Service</h3>
+                                    <h4 class="text-lg font-medium text-primary">Servicio Técnico</h4>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+
+                    <!-- Columna central para carrusel de videos -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
+                            <!-- Espacio para 4 videos -->
+                            <div class="space-y-4">
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 1</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 2</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 3</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 4</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Columna central para carrusel de videos -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
-                        
-                        <!-- Espacio para 3 videos -->
-                        <div class="space-y-4">
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 1</span>
+            <!-- Lohar Cosmetics -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-poppins font-semibold text-secondary text-center mb-6">Lohar Cosmetics - Tienda de Cosméticos</h3>
+                <hr class="border-t-2 border-gray-300 mb-8">
+                <div class="grid lg:grid-cols-7 gap-6 lg:gap-8">
+                    <!-- Misma estructura que Glow Art pero para Lohar Cosmetics -->
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 h-full border border-gray-100">
+                            <div class="flex items-start space-x-4 mb-6">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <i class="fas fa-tools text-2xl text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-poppins font-semibold text-secondary">Lohar Cosmetics</h3>
+                                    <h4 class="text-lg font-medium text-primary">Tienda de Cosméticos</h4>
+                                </div>
                             </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 2</span>
+                            
+                            <div class="space-y-4 text-gray-700 leading-relaxed">
+                                <p>Servicio técnico especializado con presencia en redes sociales. Creamos contenido que muestra el proceso de reparación, testimonios de clientes y tips de mantenimiento.</p>
+                                <p>El contenido audiovisual ha permitido aumentar la confianza de los clientes y demostrar la expertise técnica del equipo.</p>
                             </div>
-                            <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
-                                <span class="text-gray-500">Video 3</span>
+
+                            <!-- Espacio para 3 fotos -->
+                            <div class="mt-6 grid grid-cols-3 gap-2">
+                                <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
+                                    <span class="text-gray-500 text-sm">Foto 1</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
+                                    <span class="text-gray-500 text-sm">Foto 2</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-lg h-24 flex items-center justify-center">
+                                    <span class="text-gray-500 text-sm">Foto 3</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>   
+
+                    <!-- Columna central para carrusel de videos -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 h-full border border-gray-100">
+                            <!-- Espacio para 3 videos -->
+                            <div class="space-y-4">
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 1</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 2</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 h-40 flex items-center justify-center">
+                                    <span class="text-gray-500">Video 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
             </div>
         </div>
     </div>

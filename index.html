@@ -49,32 +49,40 @@
     <!-- Footer -->
     <div id="footer-container"></div>
 
-    <script src="scripts.js"></script>
+    <script type="module" src="scripts.js"></script>
     <script>
-        // Cargar todas las secciones
-        document.addEventListener('DOMContentLoaded', function() {
-            loadSection('header', 'header-container');
-            loadSection('hero', 'hero-container');
-            loadSection('about', 'about-container');
-            loadSection('team', 'team-container');
-            loadSection('services', 'services-container');
-            loadSection('education', 'education-container');
-            loadSection('reasons', 'reasons-container');
-            loadSection('experience', 'experience-container');
-            loadSection('plans', 'plans-container');
-            loadSection('contact', 'contact-container');
-            loadSection('whatsapp', 'whatsapp-container');
-            loadSection('footer', 'footer-container');
-        });
+        const sections = [
+        'header', 'hero', 'about', 'team', 'services', 
+        'education', 'reasons', 'experience', 'plans', 
+        'contact', 'whatsapp', 'footer'
+    ];
 
-        function loadSection(sectionName, containerId) {
-            fetch(`sections/${sectionName}.html`)
+    Promise.all(sections.map(section => 
+            fetch(`sections/${section}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById(containerId).innerHTML = html;
+                    const container = document.getElementById(`${section}-container`);
+                    container.innerHTML = html;
+
+                    // Solo para la sección de experiencia
+                    if (section === 'experience') {
+                        const videos = container.querySelectorAll('video');
+                        videos.forEach(video => {
+                            video.addEventListener('play', () => {
+                                videos.forEach(v => {
+                                    if (v !== video) v.pause();
+                                });
+                            });
+                        });
+
+                        // Cargar modal.js después de cargar la sección de experiencia
+                        const script = document.createElement('script');
+                        script.src = 'modal.js';
+                        document.body.appendChild(script);
+                    }
                 })
-                .catch(error => console.error(`Error loading ${sectionName}:`, error));
-        }
+                .catch(error => console.error(`Error loading ${section}:`, error))
+        ));
     </script>
 </body>
 </html>
