@@ -104,3 +104,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 800);
     }, 100); // Esperar 1 segundo para que se carguen todas las secciones
 });
+
+
+
+        // Funcionalidad de pestañas
+document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remover active de todos los botones
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-300', 'text-gray-700');
+                });
+                
+                // Agregar active al botón clickeado
+                button.classList.add('active', 'bg-primary', 'text-white');
+                button.classList.remove('bg-gray-300', 'text-gray-700');
+                
+                // Mostrar contenido correspondiente
+                const tabId = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-pane').forEach(pane => {
+                    pane.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
