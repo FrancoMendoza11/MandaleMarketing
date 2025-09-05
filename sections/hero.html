@@ -1,87 +1,108 @@
+<section id="inicio" class="h-screen bg-[#fef7f0] relative overflow-hidden px-4 md:px-10">
+    <div class="container mx-auto px-4 flex flex-col items-center justify-center h-full pt-16 md:pt-0 pb-16">
+        <!-- Contenido principal en mobile: primero el texto, luego la imagen -->
+        <div class="w-full mt-10 md:flex md:flex-row md:items-center md:justify-center">
 
-<section id="inicio" class="h-[100vh] bg-[#fef7f0] py-16 md:py-24 relative overflow-hidden ajustarheight px-10">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center h-full">
-        <div class="md:w-1/2 hero-content fade-in">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
-                <span class="block">CREAMOS, PUBLICAMOS Y</span>
-                <span class="gradient-text">POTENCIAMOS TU</span>
-                <span class="block">CONTENIDO EN REDES</span>
-            </h2>
-            
-            <p class="text-xl text-gray-700 mb-8">
-                PARA QUE TU MARCA SEA VISTA, RECORDADA Y ELEGIDA
-            </p>
-            
-            <div class="mb-8">
-                <ul class="text-gray-700 space-y-2">
-                    <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> GESTIÓN DE REDES</li>
-                    <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> CREACIÓN DE CONTENIDO</li>
-                    <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> ESTRATEGIAS QUE POTENCIAN TU MARCA</li>
-                </ul>
+            <!-- Contenido del hero -->
+            <div class="w-full md:w-[60%] hero-content fade-in mb-8 md:mb-0 text-center md:text-left">
+
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6 leading-tight text-center md:text-left
+                        bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent">
+                    <span class="block">CREAMOS, PUBLICAMOS Y</span>
+                    <span class="block">POTENCIAMOS TU</span>
+                    <span class="block">CONTENIDO EN REDES</span>
+                </h2>
+
+                
+                <p class="text-lg md:text-xl text-gray-700 mb-4 md:mb-8">
+                    PARA QUE TU MARCA SEA VISTA, RECORDADA Y ELEGIDA
+                </p>
+                
+                <div class="mb-6 md:mb-8">
+                    <ul class="text-gray-700 space-y-2 text-left inline-block">
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> GESTIÓN DE REDES</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> CREACIÓN DE CONTENIDO</li>
+                        <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i> ESTRATEGIAS QUE POTENCIAN TU MARCA</li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-6 md:mb-10 justify-center md:justify-start">
+                    <a href="#planes" 
+                    class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold 
+                            py-3 px-6 sm:py-4 sm:px-8 rounded-full inline-block transition transform hover:scale-105 
+                            shadow-lg hover:shadow-xl text-center text-sm sm:text-base">
+                        Comenzar ahora
+                    </a>
+                    <a href="#servicios" 
+                    class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-poppins font-semibold 
+                            py-3 px-6 sm:py-4 sm:px-8 rounded-full inline-block transition transform hover:scale-105 
+                            text-center text-sm sm:text-base">
+                        Nuestros servicios
+                    </a>
+                </div>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                <a href="#planes" class="bg-primary shine-effect hover:bg-opacity-90 text-white font-poppins font-semibold py-4 px-8 rounded-full inline-block transition transform hover:scale-105 shadow-lg hover:shadow-xl text-center">
-                    Comenzar ahora
-                </a>
-                <a href="#servicios" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-poppins font-semibold py-4 px-8 rounded-full inline-block transition transform hover:scale-105 text-center">
-                    Nuestros servicios
-                </a>
-            </div>
-        </div>
-        
-        <div class="md:w-1/2 mt-12 md:mt-0 scale-in">
-            <div class="hero-graphic relative flex flex-col items-center justify-center">
-                <!-- Contenedor principal del gráfico -->
-                <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 bg-[#fef7f0]">
-                    <!-- Círculo de fondo con gradiente -->
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-90 bg-[#fef7f0]"></div>
-                    
-                    <!-- Icono central -->
-                    <div class="absolute inset-0 flex items-center justify-center ">
-                        <div class="w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center shadow-xl border-8 border-white overflow-hidden bg-[#fef7f0]">
-                            <!-- Contenedor cuadrado forzado para la imagen -->
-                            <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden bg-[#fef7f0]">
-                                <img src="./MN.ico" alt="Mandale Marketing" 
-                                     class="w-full h-full object-cover" 
-                                     onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
-                            </div>
-                            <!-- Elemento de respaldo circular grande -->
-                            <div class="hidden absolute inset-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
-                                <span class="text-5xl md:text-6xl font-bold text-white">MN</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Iconos de redes sociales alrededor -->
-                    <div class="absolute inset-0 rotating-icons">
-                        <!-- Instagram -->
-                        <div class="absolute top-6 -right-2 transform translate-x-1/2">
-                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shadow-md">
-                                <i class="fab fa-instagram text-white text-xl"></i>
+            <!-- Gráfico del hero -->
+            <div class="w-full md:w-[40%] scale-in">
+                <div class="hero-graphic relative flex flex-col items-center justify-center">
+                    <!-- Contenedor principal del gráfico - Reducido en mobile -->
+                    <div class="relative w-48 h-48 md:w-80 md:h-80 mx-auto mb-4 md:mb-8 bg-[#fef7f0]">
+                        <!-- Círculo de fondo con gradiente -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-90 bg-[#fef7f0]"></div>
+                        
+                        <!-- Icono central -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-48 h-48 md:w-72 md:h-72 rounded-full flex items-center justify-center shadow-xl border-4 md:border-8 border-white overflow-hidden bg-[#fef7f0]">
+                                <!-- Contenedor cuadrado forzado para la imagen -->
+                                <div class="w-32 h-32 md:w-52 md:h-52 rounded-full overflow-hidden bg-[#fef7f0]">
+                                    <img src="./MN.ico" alt="Mandale Marketing" 
+                                         class="w-full h-full object-cover" 
+                                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                                </div>
+                                <!-- Elemento de respaldo circular grande -->
+                                <div class="hidden absolute inset-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary">
+                                    <span class="text-3xl md:text-6xl font-bold text-white">MN</span>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- TikTok -->
-                        <div class="absolute bottom-6 -left-2 transform -translate-x-1/2">
-                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                                <i class="fab fa-tiktok text-white text-xl"></i>
+                        <!-- Iconos de redes sociales alrededor -->
+                        <div class="absolute inset-0 rotating-icons">
+                            <!-- Instagram -->
+                            <div class="absolute top-4 md:top-6 -right-1 md:-right-2 transform translate-x-1/2">
+                                <a href="https://www.instagram.com/mandale_marketing" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform">
+                                    <i class="fab fa-instagram text-white text-lg md:text-xl"></i>
+                                </a>
+                            </div>
+                            
+                            <!-- TikTok -->
+                            <div class="absolute bottom-4 md:bottom-6 -left-1 md:-left-2 transform -translate-x-1/2">
+                                <a href="https://www.tiktok.com/@mandale.marketing?_t=ZM-8zPrJS9tUnN&_r=1" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform">
+                                    <i class="fab fa-tiktok text-white text-lg md:text-xl"></i>
+                                </a>
                             </div>
                         </div>
+
                     </div>
-                </div>
-                
-                <!-- Texto descriptivo debajo -->
-                <div class="text-center">
-                    <h3 class="text-xl font-semibold text-primary mb-3 margintop">Nuestras Redes Sociales</h3>
+                    
+                    <!-- Texto descriptivo debajo -->
+                    <div class="text-center">
+                        <h3 class="text-lg md:text-xl font-semibold text-primary">Nuestras Redes Sociales</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Flecha indicadora - Versión corregida -->
-    <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
-        <a href="#quienes-somos" class="text-primary text-4xl bg-white rounded-full p-2 shadow-lg">
+    <!-- Flecha indicadora - Posición fija al fondo -->
+    <div class="absolute bottom-2 md:bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
+        <a href="#quienes-somos" class="text-primary text-2xl md:text-4xl bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow">
             <i class="fas fa-chevron-down"></i>
         </a>
     </div>
