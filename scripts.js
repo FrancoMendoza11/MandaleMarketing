@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const heroGraphic = document.querySelector('.hero-graphic');
             if (heroGraphic) heroGraphic.classList.add('visible');
         }, 800);
-    }, 100); // Esperar 1 segundo para que se carguen todas las secciones
+    }, 300); // Esperar 1 segundo para que se carguen todas las secciones
 });
 
 
